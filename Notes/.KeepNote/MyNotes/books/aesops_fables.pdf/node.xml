@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<node>
+<version>6</version>
+<dict>
+  <key>title</key><string>Aesop's_fables.pdf</string>
+  <key>nodeid</key><string>ba295efd-d21c-4559-ac26-81d49adbe15c</string>
+  <key>modified_time</key><integer>1419946990</integer>
+  <key>version</key><integer>6</integer>
+  <key>payload_filename</key><string>aesops_fables.pdf</string>
+  <key>content_type</key><string>application/pdf</string>
+  <key>created_time</key><integer>1419946990</integer>
+  <key>info_sort_dir</key><integer>1</integer>
+  <key>order</key><integer>0</integer>
+  <key>info_sort</key><string>order</string>
+</dict>
+</node>

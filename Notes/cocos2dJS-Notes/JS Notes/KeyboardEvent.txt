@@ -1,0 +1,54 @@
+//single keypress detection
+window.addEventListener("keydown", moveSomething, false);
+ 
+function moveSomething(e) {
+    switch(e.keyCode) {
+        case 37:
+            // left key pressed
+            break;
+        case 38:
+            // up key pressed
+            break;
+        case 39:
+            // right key pressed
+            break;
+        case 40:
+            // down key pressed
+            break; 
+    }  
+}
+
+
+
+
+//multiple key detection
+
+window.addEventListener("keydown", keysPressed, false);
+window.addEventListener("keyup", keysReleased, false);
+ 
+var keys = [];
+ 
+function keysPressed(e) {
+    // store an entry for every key pressed
+    keys[e.keyCode] = true;
+     
+    // Ctrl + Shift + 5
+    if (keys[17] && keys[16] && keys[53]) {
+        // do something
+    }
+     
+    // Ctrl + f
+    if (keys[17] && keys[70]) {
+        // do something 
+     
+        // prevent default browser behavior
+        e.preventDefault();
+    }
+}
+ 
+function keysReleased(e) {
+    // mark keys that were released
+    keys[e.keyCode] = false;
+}
+
+

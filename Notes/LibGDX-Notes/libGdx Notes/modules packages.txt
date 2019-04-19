@@ -1,0 +1,169 @@
+basically libGdx is an API
+this is organised into packages
+classes and functions for ease of use
+
+the main Modules are
+##############################################
+ Application module
+*********************************************
+this is used for creating a lib gdx application
+logging info
+--------------
+ex
+Gdx.app.log("MyDemoTag", "This is an info log.");
+Gdx.app.debug("MyDemoTag", "This is a debug log.");
+Gdx.app.error("MyDemoTag", "This is an error log.");
+
+closing the application
+-----------------------
+ex Gdx.app.exit();
+
+persistance data
+--------------------
+Preferences prefs = Gdx.app.getPreferences("settings.prefs");
+prefs.putInteger("sound_volume", 100); // volume @ 100%
+prefs.flush();
+
+int soundVolume = prefs.getInteger("sound_volume", 50);//if key does not exist 50 will be default value
+
+Querying the Android API level
+-------------------------------
+Gdx.app.getVersion();
+
+Querying the platform type
+--------------------------
+switch (Gdx.app.getType()) {
+case Desktop:
+// Code for Desktop application
+break;
+case Android:
+// Code for Android application
+break;
+case WebGL:
+// Code for WebGL application
+break;
+case iOS:
+// Code for IOS application
+break;
+default:
+// Unhandled (new?) platform application
+break;
+}
+
+Querying the memory usage
+---------------------------
+long memUsageJavaHeap = Gdx.app.getJavaHeap();
+long memUsageNativeHeap = Gdx.app.getNativeHeap();
+
+Multithreading
+---------------
+Gdx.app.postRunnable(new Runnable() {
+@Override
+public void run() {
+//do something
+}
+});
+############################################################
+   graphics module  //Gdx.graphics
+********************************************************
+
+Querying delta time
+-------------------
+Gdx.graphics.getDeltaTime()
+
+Querying display size
+--------------------------
+Gdx.graphics.getWidth()
+Gdx.graphics.getHeight()
+
+Querying the frames per second (FPS) counter
+-------------------------------------------
+Gdx.graphics.getFramesPerSecond()
+
+#############################################################
+The audio module
+**********************************************************
+
+Gdx.audio
+Sound playback
+----------------
+To load sounds for playback, call Gdx.audio.newSound() .
+The supported file formats are WAV, MP3, and OGC.
+
+Music streaming
+-------------------
+Gdx.audio.newMusic()
+###############################################################
+The input module
+*************************************************************
+Gdx.input
+Reading the keyboard/touch/mouse input
+----------------------------------------
+•	 To find out whether the screen is touched either by a finger or by mouse,
+call Gdx.input.isTouched()
+•	 To find out whether the mouse button is pressed, call Gdx.input.
+isButtonPressed()
+•	 To find out whether the keyboard key is pressed, call Gdx.input.
+isKeyPressed()
+
+Reading the accelerometer
+---------------------------
+Gdx.input.getAccelerometerX()
+Gdx.input.getAccelerometerY()
+Gdx.input.getAccelerometerZ()
+
+
+Starting and canceling vibrator
+-------------------------------
+On Android, you can let the device vibrate by calling Gdx.input.vibrate() .
+A running vibration can be canceled by calling Gdx.input.cancelVibrate() .
+
+Catching Android's soft keys
+-------------------------------
+You might want to catch Android's soft keys to add an extra handling code for them.
+If you want to catch the back button, call Gdx.input.setCatchBackKey(true) , and
+if you want to catch the menu button, call Gdx.input.setCatchMenuKey(true) .
+On a desktop where you have a mouse pointer, you can tell LibGDX to catch it so that
+you get a permanent mouse input without having the mouse ever leave the application
+window. To catch the mouse cursor, call Gdx.input.setCursorCatched(true) .
+
+###################################################################################
+The files module
+*******************************************************************************
+The files module can be accessed either through Gdx.getFiles() or using the
+shortcut variable: Gdx.files .
+
+Getting an internal file handle
+------------------------------
+You can get a file handle for an internal file by calling Gdx.files.internal() .
+An internal file is relative to the assets folder on the Android and WebGL
+platforms. On a desktop, it is relative to the root folder of the application.
+
+Getting an external file handle
+---------------------------------
+You can get a file handle for an external file by calling Gdx.files.external() .
+An external file is relative to the SD card on the Android platform. On a
+desktop, it is relative to the user's home folder. Note that this is not available
+for WebGL applications.
+
+#####################################################################################
+The network module
+********************************************************************************
+The network module can be accessed either through Gdx.getNet() or using the
+shortcut variable: Gdx.net .
+
+HTTP requests
+--------------
+You can make HTTP requests by calling Gdx.net.sendHttpRequest()
+or cancel
+them by calling Gdx.net.cancelHttpRequest() .
+
+Client/server sockets
+------------------------
+You can create client/server sockets by calling either Gdx.net.newClientSocket()
+or Gdx.net.newServerSocket() .
+Opening a URI in a web browser
+To open a Uniform Resource Identifier (URI) in the default web browser, call Gdx.
+net.openURI(URI) .
+
+

@@ -1,0 +1,30 @@
+How to Start a New Game
+
+    Download the code from Cocos2d download site
+    Run setup.py
+    Run the cocos script
+
+Example:
+
+$ cd cocos2d-js
+$ ./setup.py
+$ source FILE_TO_SAVE_SYSTEM_VARIABLE
+
+$ cocos new MyGame -l js -d /directory/to/project
+$ cd /directory/to/project/MyGame
+
+Run the project under the game directory
+
+    Run Cocos2d-html5 project with a Websever:
+
+    cocos run -p web
+
+    Compile and run project in Cocos2d-JSB :
+
+    cocos compile -p ios|mac|android|win32|web
+    cocos run -p ios|mac|android|win32|web
+
+app.js is the starting point script inside the src folder.
+resource.js is the object to add the resources.
+
+project.json is the main organisation of the game project

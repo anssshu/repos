@@ -1,0 +1,6 @@
+put a image file inside the resources folder.
+
+in the <yourgame>.cpp file .
+change the helloworlg image to name of this image in the hello world template.
+
+do the same things for the fonts too.

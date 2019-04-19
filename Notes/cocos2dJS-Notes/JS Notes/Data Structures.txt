@@ -1,0 +1,124 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------
+                                                       4.Data Structue (Arrays and JSON)
+---------------------------------------------------------------------------------------------------------------------------------------------------
+//collection of data elements are called as data structure
+JSON-javascript object notation
+
+JSON object
+{"firstName":"John", "lastName":"Doe"}
+
+
+JSON Array
+{"employees":[
+    {"firstName":"John", "lastName":"Doe"},
+    {"firstName":"Anna", "lastName":"Smith"},
+    {"firstName":"Peter", "lastName":"Jones"}
+]}
+
+text to JSON
+
+var text = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+var obj = JSON.parse(text);
+///////////////////////////////////////////////////////////
+
+
+
+Array
+Syntax:
+var array-name = [item1, item2, ...];      
+Example:
+var cars = ["Saab", "Volvo", "BMW"];
+Example
+var cars = new Array("Saab", "Volvo", "BMW");
+
+//accessing arrays
+
+var name = cars[0];
+cars[0] = "Opel";
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.length; 
+fruits.sort();
+//////////////////////////////////////////////////////////////
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.valueOf();
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.toString();
+
+<p id="demo"></p>
+
+<script>
+var fruits = ["Banana", "Orange","Apple", "Mango"];
+document.getElementById("demo").innerHTML = fruits.join(" * ");
+</script>
+
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.pop();              // Removes the last element ("Mango") from fruits
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.shift();            // Removes the first element "Banana" from fruits
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[0] = "Kiwi";        // Changes the first element of fruits to "Kiwi"
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits[fruits.length] = "Kiwi";          // Appends "Kiwi" to fruit
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+delete fruits[0];           // Changes the first element in fruits to undefined
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(2, 0, "Lemon", "Kiwi");
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.splice(0,1);        // Removes the first element of fruits
+
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();            // Sorts the elements of fruits
+
+var fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();            // Sorts the elements of fruits
+fruits.reverse();         // Reverses the order of the elements
+
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a-b});
+
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b-a});
+
+function(a, b){return a-b}
+
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b-a});
+// now points[0] contains the highest value
+
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return a-b});
+// now points[0] contains the lowest value
+
+
+var myGirls = ["Cecilie", "Lone"];
+var myBoys = ["Emil", "Tobias","Linus"];
+var myChildren = myGirls.concat(myBoys);     // Concatenates (joins) myGirls and myBoys
+
+
+var arr1 = ["Cecilie", "Lone"];
+var arr2 = ["Emil", "Tobias","Linus"];
+var arr3 = ["Robin", "Morgan"];
+var myChildren = arr1.concat(arr2, arr3);     // Concatenates arr1 with arr2 and arr3
+
+var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+var citrus = fruits.slice(1,3);

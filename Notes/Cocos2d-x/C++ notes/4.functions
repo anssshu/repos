@@ -1,0 +1,65 @@
+
+//function declaration
+
+int raiseToPower(int base, int exponent)
+{
+  int result = 1;
+  for (int i = 0; i < exponent; i = i + 1) {
+    result = result * base;
+  }
+
+  return result;
+}
+--------------------------------
+//function that returns a string
+char* foo()//it returns a string of character
+{
+return "hello"; // ok
+}
+-----------------------------
+//declaration of function required before use
+int bar();
+
+int foo()
+{
+return bar()*2; // ok
+}
+
+int bar()
+{
+return 3;
+}
+-----------------------------------------
+// pass-by-value
+-------------------
+void increment(int a) {
+a = a + 1; // HERE
+cout << "a in increment " << a << endl;
+}
+int main() {
+int q = 3;
+increment(q); // does nothing
+cout << "q in main " << q << endl;
+}
+-------------------------------------
+// pass-by-referance
+--------------------
+void increment(int &a) {
+a = a + 1;
+cout << "a in increment " << a << endl;
+}
+int main() {
+int q = 3;
+increment(q); // works q increase by 1
+cout << "q in main " << q << endl;
+}
+-----------------------------------------
+recurssion
+------------
+int fibonacci(int n) {
+if (n == 0 || n == 1) {
+return 1;
+} else {
+return fibonacci(n-2) + fibonacci(n-1);
+}
+}

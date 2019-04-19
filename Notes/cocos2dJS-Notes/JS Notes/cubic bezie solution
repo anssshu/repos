@@ -1,0 +1,22 @@
+GetYValues(StartPoint, ControlPoint, EndPoint, X)
+{
+    Ax = StartPoint.X
+    Bx = ControlPoint.X
+    Cx = EndPoint.X
+
+    q1 = 2*Ax - 2*Bx;
+    q2 = Sqrt(5*Ax*Ax - 10*Ax*Bx + Ax*Cx - Ax*X + 2*Bx*X + 4*Bx*Bx)
+    q3 = 2*Ax - 4*Bx + 2*Cx
+
+    t1 = (q1 + q2) / q3
+    t2 = (q1 - q2) / q3
+
+    Ay = StartPoint.Y
+    By = ControlPoint.Y
+    Cy = EndPoint.Y
+
+    Y1 = Ay*(1-t1)*(1-t1) + By*2*(1-t1)*t1 + Cy*t1
+    Y2 = Ay*(1-t2)*(1-t2) + By*2*(1-t2)*t2 + Cy*t2
+
+    return [Y1,Y2]
+}

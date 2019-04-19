@@ -1,0 +1,25 @@
+//create a class declaration
+class Xyz:public superClass{
+
+public:
+	Xyz();//constuctor declaration do not put return type before it--common mistake
+
+};
+//--------------
+//constructor declaration
+Xyz::Xyz(){
+
+};
+-------------------------------------------
+pointer to a class can be created in 2 ways
+
+1.
+Xyz foo ;
+Xyz *pfoo=&foo;
+
+Now 
+pfoo->function();//access to the the object through the pointer
+
+2.
+Xyz* foo=new Xyz();
+now foo is the pointer to the Xyz object

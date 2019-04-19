@@ -1,0 +1,37 @@
+
+//basic game structure
+
+//imports
+
+//class declaration
+public class HelloWorld implements ApplicationListener {
+    //instance variables
+
+    //entry point
+    @Override
+    public void create(){
+        //codes
+        }
+
+    //run every frame
+    @Override
+    public void render(){
+     //code
+
+     }
+    //on dispose
+    @Override
+    public void dispose(){
+
+        }
+        //
+    @Override
+    public void resize(int width, int height) {
+        }
+
+    @Override
+    public void pause() {
+         }
+
+}
+////////////////////////////////////////////////////////////////////////////////

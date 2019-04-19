@@ -1,0 +1,93 @@
+Control Structures
+Control structures are portions of program code that contain statements within them and,
+depending on the circumstances, execute these statements in a certain way. There are
+typically two kinds: conditionals and loops.
+
+Conditionals
+---------------
+//using the if statement
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+int x = 6;
+
+int y = 2;
+
+if(x > y)
+
+cout << “x is greater than y\n”;
+
+else if(y > x)
+
+cout << “y is greater than x\n”;
+
+else
+
+cout << “x and y are equal\n”;
+
+}
+
+return 0;
+--------------------------------------------
+//using the switch case
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+int x = 6;
+switch(x) {
+case 1:
+cout << “x is 1\n”;
+break;
+case 2:
+case 3:
+cout << "x is 2 or 3";
+break;
+default:
+cout << "x is not 1, 2, or 3";
+}
+}
+return 0;
+-----------------------------------------------
+
+
+
+
+Loops
+-------------
+
+//1.while statement
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+int x = 0;
+
+while(x < 10)
+
+x = x + 1;
+cout << “x is “ << x << “\n”;
+return 0;
+}
+---------------------------------------------------
+//For statement
+#include <iostream>
+
+using namespace std;
+
+int main() {
+
+for(int x = 0; x < 10; x = x + 1)
+
+cout << x << “\n”;
+
+return 0;
+
+}

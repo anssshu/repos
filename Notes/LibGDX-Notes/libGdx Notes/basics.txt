@@ -1,0 +1,90 @@
+
+libGdx is a java game library
+a complete feature reach and multi platform games can  be creates with it
+-----------------------------------------------------------------------
+this  note is prepared so that it would be helpful   coding the game
+and can be reffered when ever needed.
+-----------------------------------------------------------------------
+the basic constituents of a 2d game is
+
+* camera ---for moving inside the screen screens
+* colorful or gradient background
+* sprites (these are objects created from textures[images])
+* sprite sheets
+* tileMaps--for creating the level background
+* inputs-----keyboard,joystics,mouse,onscreen keypads
+* audio-sound such as background music
+* animations---------------------
+* text----for writing scores or data on the screen
+* particles--for effects like fire,rain,spark,smoke, steam
+* menus and setting screen------for starting screen changing game keys etc
+* splash screens and loading screens
+* UI elements like buttons progress bars etc
+* levels and scene changing logic
+* AI for the game characters ----this is simple scripts
+* collision detection logic and function
+* physics and constraints or much more simulated world
+* object higher archie and connection(stage ,actor and actions with sequences ,parallels and repeats)
+* inter object communications for better game logic
+-------------------------------------------------------------------------------
+
+CONCEPTS
+        //create an animation
+
+        //take user input(touch,mouse,keyboard,multiple touches)
+
+        //text input
+
+        //load files
+
+        //add particles
+
+        //2d tile maps
+
+        //AI
+
+        //JSON and XML
+
+        //Math utils
+
+        //path editor
+
+        //particle editor
+
+        //overlap 2d
+
+
+        //add custom objects
+
+        //create backgrounds
+
+        //add fonts and update it
+
+        //add menus and buttons scene 2d
+
+        //file handling
+
+        //drawing primitive on the screen
+
+        //camera
+
+        //box2d
+
+        //nodes and inter layer communication
+
+        //persistant data
+
+
+        //networking
+
+        //addMob
+
+        //swarm
+
+        //Airpush
+
+        //NextPeer
+
+        //Google Play
+
+        //adding music files

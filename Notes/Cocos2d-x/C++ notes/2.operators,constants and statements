@@ -1,0 +1,56 @@
+Tokens are the minimals chunk of program that have meaning to the compiler – the smallest
+meaningful symbols in the language. Our code displays all 6 kinds of tokens, though the
+usual use of operators is not present here:
+-------------------------------------------------------------------------------
+Token type      Description/Purpose                          Examples
+
+Keywords        Words with special meaning to
+                the compile                          int, double, for, auto
+Identifiers     Names of things that are not
+                built into the language              cout, std, x, myFunction
+Literals        Basic constant values whose
+                value is specified directly in
+                the source code                     "Hello, world!", 24.3,0, ’c’
+Operators       Mathematical or logical oper­ations   +, -, &&, %, <<
+Punctuation/Separators    Punctuation
+                definingstructure of a program        { } ( ) , ;
+Whitespace      Spaces of various sorts;
+                ig­nored by the compiler
+                                                      theSpaces,
+                                                      tabs, newlines, com­ments
+-------------------------------------------------------------------------------
+  Escape Sequence
+Represented Character
+\a System bell (beep sound)
+\b Backspace
+\f Formfeed (page break)
+\n Newline (line break)
+\r “Carriage return” (returns cursor to start of line)
+\t Tab
+\\ Backslash
+\’ Single quote character
+\" Double quote character
+\some integer x
+The character represented by x
+----------------------------------------------------------------------------
+
+Values and Statements
+First, a few definitions:
+• A statement is a unit of code that does something – a basic building block of a program.
+• An expression is a statement that has a value – for instance, a number, a string, the
+sum of two numbers, etc. 4 + 2, x - 1, and "Hello, world!\n" are all expressions.
+Not every statement is an expression. It makes no sense to talk about the value of an
+#include statement, for instance.
+-----------------------------------------------------------------------------
+Operators
+We can perform arithmetic calculations with operators. Operators act on expressions to form
+a new expression. For example, we could replace "Hello, world!\n" with (4 + 2) / 3,
+which would cause the program to print the number 2. In this case, the + operator acts on
+the expressions 4 and 2 (its operands).
+Operator types:
+• Mathematical: +, -, *, /, and parentheses have their usual mathematical meanings,
+including using - for negation. % (the modulus operator) takes the remainder of two
+numbers: 6 % 5 evaluates to 1.
+• Logical: used for “and,” “or,” and so on. More on those in the next lecture.
+• Bitwise: used to manipulate the binary representations of numbers. We will not focus
+on these.

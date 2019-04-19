@@ -1,0 +1,150 @@
+                               
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+			        	2).Flow of controls
+---------------------------------------------------------------------------------------------------------------------------------------------
+a)Conditions
+################################################
+i) if else statement
+
+	if (condition){                                                                                                                                                                                                                                                                                     
+			expression1;
+			exp2;
+			exp3;
+			...
+			...
+			}
+       else if (condition){exp block}
+       .
+       .
+       .
+       else {exp block}
+ 
+ example  :- if (x==2){console.log("value of input is 2");}
+
+ii)switch case statement
+
+switch(expression) {
+    case n:
+        code block
+        break;
+    case n:
+        code block
+        break;
+    default:
+        default code block
+}
+
+
+
+
+example
+
+switch (new Date().getDay()) {
+    case 0:
+        day = "Sunday";
+        break;
+    case 1:
+        day = "Monday";
+        break;
+    case 2:
+        day = "Tuesday";
+        break;
+    case 3:
+        day = "Wednesday";
+        break;
+    case 4:
+        day = "Thursday";
+        break;
+    case 5:
+        day = "Friday";
+        break;
+    case 6:
+        day = "Saturday";
+        break;
+}
+
+###########################################
+b)LOOPS
+#############################################
+i)for loop
+
+for (statement 1; statement 2; statement 3) {
+    code block to be executed
+}
+
+example
+/////////////////////////////////
+for (i = 0; i < 5; i++) {
+    console.log(i);
+}
+////////////////////////////////
+var i = 2;
+var len = cars.length;
+var text = "";
+for (; i < len; i++) {
+    text += cars[i] + "<br>";
+}
+////////////////////////////////
+
+var i = 0;
+var len = cars.length;
+for (; i < len; ) {
+    text += cars[i] + "<br>";
+    i++;
+}
+///////////////////////////////////
+for in loop
+###########
+
+var person = {fname:"John", lname:"Doe", age:25};
+
+var text = "";
+var x;
+for (x in person) {
+    text += person[x];
+}
+//////////////////////////////////
+
+ii)While loop
+######################
+syntax
+
+while (condition) {
+    code block to be executed
+}
+example
+/////////////////////////////////
+while (i < 10) {
+    text += "The number is " + i;
+    i++;
+}
+////////////////////////////////
+iii)Do While loop
+################################
+Syntax
+do {
+    code block to be executed
+}
+while (condition);
+//////////////////////////////
+example
+do {
+    text += "The number is " + i;
+    i++;
+}
+while (i < 10);
+iv)Break Statement
+#####################
+for (i = 0; i < 10; i++) {
+    if (i == 3) break;
+    text += "The number is " + i + "<br>";
+}
+////////////////////////////////////
+
+v)Continue Statement
+########################
+for (i = 0; i <= 10; i++) {
+    if (i == 3) continue;
+    text += "The number is " + i + "<br>";
+}

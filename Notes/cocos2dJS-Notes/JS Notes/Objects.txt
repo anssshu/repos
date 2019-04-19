@@ -1,0 +1,241 @@
+---------------------------------------------------------------------------------------------------------------------------------------------------
+                                                       5.Objects and Class
+---------------------------------------------------------------------------------------------------------------------------------------------------
+var x=new Object();
+var car={"color":"red","power":"80 hp","max-speed":130}
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+//////////////////////////////////////////////////////////////////////////
+// Object Constructor
+
+function Graph() {
+  this.vertices = [];
+  this.edges = [];
+}
+
+Graph.prototype = {
+  addVertex: function(v){
+    this.vertices.push(v);
+  }
+
+Graph.prototype.startPoint=[0,0];
+
+
+};
+
+var g = new Graph();
+
+/////////////////////////////////////////////////////////////////////////
+
+var person = {
+    firstName:"John",
+    lastName:"Doe",
+    age:50,
+    eyeColor:"blue",
+    changeName:function(name){
+this.firstName=name}
+
+}
+
+
+person.lastName;
+
+person["lastName"];
+
+delete person.age;
+
+//////////////////////////////
+Object Methods
+function person(firstname, lastname, age, eyecolor) {
+    this.firstname = firstname; 
+    this.lastname = lastname;
+    this.age = age;
+    this.eyecolor = eyecolor;
+    this.changeName = function (name) {
+        this.lastname = name;
+    }
+}
+
+myMother.changeName("Doe");
+
+//////////////////////////////////
+using prototype
+//the constructor function
+function person(first, last, age, eyecolor) {
+    this.firstName = first;
+    this.lastName = last;
+    this.age = age;
+    this.eyeColor = eyecolor;
+}
+person.prototype.name = function() {	
+    return this.firstName + " " + this.lastName;
+};
+
+person.prototype.nationality = "English";
+
+////////////////////////////////////////////
+Inheritance (single and multiple inheritence can be created with the class.call(this) method inside the constructor
+#####################################
+/////////////////////////////////////////////////////////////////
+ // I am the Person class.
+function Person( name ){
+this.name = name;
+}
+// Define the class methods.
+Person.prototype = {
+// I swing this person in the trees.
+swing: function(){
+return( "Ouch! My hands!" );
+},
+// I walk this person.
+walk: function(){
+return( "Walk this way!" );
+}
+};
+// -------------------------------------------------- //
+// -------------------------------------------------- //
+// I am the Monkey class.
+function Monkey( isFriendly ){
+this.isFriendly = isFriendly;
+}
+// Define the class methods.
+Monkey.prototype = {
+// I swing this person in the trees.
+swing: function(){
+return( "Weeeeee! I feel so free!" );
+},
+// I walk this monkey.
+walk: function(){
+return( "Ouch! My hands!" );
+}
+};
+// -------------------------------------------------- //
+// -------------------------------------------------- //
+// I am the Ben class.
+function Ben(){
+// Call the super constructors of the base classes.
+Person.call( this, "Ben" );
+Monkey.call( this, true );
+}
+// Define the class methods.
+Ben.prototype = {
+// I give people a high-five!
+highFive: function( person ){
+return( "Hey " + person.name + ", high five!" );
+},
+// I walk this Ben. While I inherit mostly from Monkey,
+// I can actually walk like a Person; as such, we need
+// to explicitly call the more appropriate super method.
+walk: function(){
+return(
+Person.prototype.walk.call( this )
+);
+}
+};
+// The Ben class exnteds both the Person and Monkey class
+// (or so I'm told by my friends). Here, we are going to use
+// jQuery's .extend() method to augment the existing Ben
+// prototype. Notice that Ben comes LAST! The order of
+// inheritance matters here as the class methods will
+// overwrite each other.
+Ben.prototype = $.extend(
+{},
+Person.prototype,
+Monkey.prototype,
+Ben.prototype
+);
+// -------------------------------------------------- //
+// -------------------------------------------------- //
+// -------------------------------------------------- //
+// -------------------------------------------------- //
+// Create a new Ben object.
+var ben = new Ben();
+// Try to walk and swing.
+console.log( "Walking:", ben.walk() );
+console.log( "Swinging:", ben.swing() );
+// Try to give a high-five to someone.
+console.log(
+"High-five:",
+ben.highFive( new Person( "Jill" ) )
+);
+
+//////////////////////////////////////////////////////////////
+function Employee() {
+  this.name = "";
+  this.dept = "general";
+}
+
+function Manager() {
+  Employee.call(this);
+  this.reports = [];
+}
+Manager.prototype = Object.create(Employee.prototype);
+
+function WorkerBee() {
+  Employee.call(this);
+  this.projects = [];
+}
+WorkerBee.prototype = Object.create(Employee.prototype);
+
+function SalesPerson() {
+   WorkerBee.call(this);
+   this.dept = "sales";
+   this.quota = 100;
+}
+SalesPerson.prototype = Object.create(WorkerBee.prototype);
+
+function Engineer() {
+   WorkerBee.call(this);
+   this.dept = "engineering";
+   this.machine = "";
+}
+Engineer.prototype = Object.create(WorkerBee.prototype);
+//////////////////////////////////////////////////////////
+// inheritence with constructor inputs
+function Engineer (name, projs, mach) {
+  this.base = WorkerBee;
+  this.base(name, "engineering", projs);
+  this.machine = mach || "";
+}	
+/////////////////////////////////////////////////////////////
+var a = {a: 1}; 
+var b = Object.create(a);
+
+
+??????????????????????????????????????????????????????????????
+
+//perfect multiple inheritance examples
+
+function Animal(name){
+        this.eyes=2;
+        this.legs=4;
+        this.tail=1;
+        this.name=name;
+        this.speak=function(){alert(this.name);}
+
+}
+
+//Animal.prototype.speak=function(){alert(this.name);}
+
+function Organism(){this.life="True";
+this.say=function(){alert("I am alive");}
+                   
+                   }
+//Organism.prototype.say=function(){alert("i m alive");}
+
+function Cat(name){
+Organism.call(this);
+Animal.call(this,name);
+this.sound="mew";
+}
+
+//Cat.prototype=Organism.prototype;
+//Cat.prototype=Animal.prototype;
+
+pussy=new Cat("posche");
+
+alert(pussy.tail);
+pussy.speak();
+pussy.say();
+alert(pussy.life);
+
+

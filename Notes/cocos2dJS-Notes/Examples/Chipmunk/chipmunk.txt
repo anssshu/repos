@@ -1,0 +1,47 @@
+//notes.txt
+
+/sapce
+/step space
+/set gravity
+
+/create static body
+/create shape with body
+/create static physics sprite
+/create dynamic body
+/create shapes with that
+/create dynamic physics sprites
+
+//debug draw it all
+
+//detect collision and 
+cal callbacks
+
+//create joints
+1.pin joint
+
+2.pivot joint
+
+3.slidejoints
+
+4.groove joints
+
+5.damped sprng
+
+6.damped rotary spring
+
+7.rotary limit joint
+
+8.rachet joint
+
+9.gear joint
+
+//create a motor 
+
+//create a car
+
+//create fluid
+
+
+
+
+

@@ -1,0 +1,58 @@
+processes to create a coocos 2d x project
+
+download the cocos 2d -x game engine from its website
+
+unzip it 
+
+open your terminal
+
+navigate into the cocos-2d-x/tool/bin folder
+
+run the command
+./cocos new <projectname> -l cpp -d <path to the project folder >
+
+example ./cocos new foo -l cpp -d ~/Documents/cocos2dGames/
+
+
+after creating the project 
+navigate into the project folder
+ex-cd ~/Documents/cocos2dGames/foo
+
+now compile it
+
+cocos compile -p linux|windows|android|mac|ios
+
+now run  the game 
+
+cocos run -p linux
+
+After this you can edit your game and run it with the run command
+
+all the scripts files where the game is going to be writtten is inside the "classes" folder
+
+------------------------------------------------------------------------------------------------
+Changing the template file name and class name 
+---------------------------------------------------
+you need to make change in the following files only
+
+1.HelloWorldScene.cpp
+2.HelloWorldScene.h
+3.AppDelegate.cpp
+------------------------------
+Change the name of the files "HelloWorldScene.cpp" and "HelloWorldScene.h" as per your wish
+change the import header name in the #include <header.h> inside all three files where required
+
+Now change the The "HelloWorld" word (class definition ) as per your wish inside all three files
+
+Now inside the cmake file "CMakeLists.txt" replace the "HelloWorldScene.cpp" 
+and "HelloWorldScene.h" with the new name given to these files
+
+and re run your game 
+Now the name of your main application class has been changed.
+------------------------------------------------------------------------------------------------
+Now you can code inside the <yourgame>.cpp files for create your game
+
+Each layer or game component can be created in a separate cpp files 
+with .h and .cpp files 
+should be imported into the main game scene files and these can be added to the game scenes
+

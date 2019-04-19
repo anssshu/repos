@@ -1,0 +1,31 @@
+processes to create a coocos 2d x project
+
+download the cocos 2d -x game engine from its website
+
+unzip it 
+
+open your terminal
+
+navigate into the cocos-2d-x/tool/bin folder
+
+run the command
+./cocos new <projectname> -l cpp -d <path to the project folder >
+
+example ./cocos new foo -l cpp -d ~/Documents/cocos2dGames/
+
+
+after creating the project 
+navigate into the project folder
+ex-cd ~/Documents/cocos2dGames/foo
+
+now compile it
+
+cocos compile -p linux|windows|android|mac|ios
+
+now run  the game 
+
+cocos run -p linux
+
+After this you can edit your game and run it with the run command
+
+

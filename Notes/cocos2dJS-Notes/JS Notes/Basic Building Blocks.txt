@@ -1,0 +1,136 @@
+
+Hello World program in javascript
+---------------------------------
+console.log("Hello World");
+
+or 
+
+alert("Hello World");
+//complete examle helloWorld.html
+<html>
+<head>
+</head>
+<body>
+
+<script>
+var el=document.createElement("myElm");
+el.innerHTML="Hello World"
+document.body.appendChild(el);
+</script>
+</body>
+
+</html>
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+				1).Basic Building Blocks
+data types,statements,values,literals,variables,Strings,expressions,operators,keywords,comments,character sets
+---------------------------------------------------------------------------------------------------------------------------------------------
+comments
+########
+//this is a comment
+/* this is not going to be evaluated */
+
+DATA TYPES IN JAVASCRIPT
+
+				a)data types(.Number,String,Array,Objects,Boolean and more)
+
+// Type conversion
+x.toString()
+(123).toString()
+(100 + 23).toString()
+
+
+//Declaration of variables(identifier) of different data types
+examples
+ var x=23;//syntax for declaration
+ var y= new Array();
+ var name="rajesh"
+ var y=["car","wheel","232"];
+ var status=true;
+ var x='c';
+ var obj=new Object();
+ var t=new Array();
+ var obj1={"name":"rohan",age:24};
+Boolean(2<10);//returns true
+true ,false---boolean
+//finding data type of a variable
+
+typeof x;// returns String     
+                                b)keywords
+//there are certain reserved words which can't be used as identifiers
+//they have pre defined meaings
+example 
+for,function,Object,Array,case,switch,
+
+				c)values(variable and literals)
+
+//values are of two types variables and literals
+variable----their value changes
+ex--var x=23;x=24;/x is variable
+
+literals-----values of literals are constant
+
+var x="himalayas",x=27.6,x=Math.PI
+"himalayas",27,27.6,Math.PI----these are literals and x is variable
+
+
+				d).operators
+
+2*3
+2/3
+4+4
+5-1
+var=x;
+x=2
+x==2;//true
+2==4//false
+
+x||Y
+
+X && Y
+
+!x
+
+assignmment
+x=y;
+y=23;
+				e).expressions
+
+//part of a statement which has got a complete meaning
+
+//values and operators are used to make expressions
+w=23+t
+v=u + a*t
+
+				f).statements 
+  
+;//empty statement
+
+// simple statements
+//expressions followed by semicolon(;)---tells computer to take a meaningful action or evaluation
+//these can be a group of expressions inside {}
+examples
+n=m+4;
+
+k=23*e+x;
+//compound statement
+
+	{ var x=24;
+ 	var y=35;
+	var z=x+y;
+	}
+
+
+{ 
+	{
+		var x=23;
+  		var y=29;
+	}
+   
+console.log("hello world");
+}                           
+                               

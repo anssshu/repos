@@ -1,0 +1,125 @@
+
+class Vector {
+public:
+double xStart;
+double xEnd;
+double yStart;
+double yEnd;
+};
+
+/////////////////////////////////////////
+
+class MITStudent {
+public:
+char *name;
+int studentID;
+};
+----------------------------------------
+int main() {
+MITStudent student1;
+MITStudent student2;
+}
+
+-----------------------------------------------
+class Point {
+public:
+double x, y;
+};
+class Vector {
+public:
+Point start, end;
+};
+int main() {
+Vector vec1;
+}
+-----------------------------------------------------
+
+• When a class instance is passed by reference,
+changes are reflected in the original
+class Point { public: double x, y; };
+void offsetPoint(Point &p, double x, double y) { // works
+p.x += x;
+Passed by
+p.y += y;
+reference
+}
+int main() {
+Point p;
+p.x = 3.0;
+p.y = 4.0;
+offsetPoint(p, 1.0, 2.0); // works
+cout << "(" << p.x << "," << p.y << ")"; // (4.0,6.0)
+}
+---------------------------------------------------------
+Implementing methods
+• When a class instance is passed by reference,
+changes are reflected in the original
+class Point { public: double x, y; };
+void offsetPoint(Point &p, double x, double y) { // works
+p.x += x;
+Passed by
+p.y += y;
+reference
+}
+int main() {
+Point p;
+p.x = 3.0;
+p.y = 4.0;
+offsetPoint(p, 1.0, 2.0); // works
+cout << "(" << p.x << "," << p.y << ")"; // (4.0,6.0)
+}
+
+#include "vector.h"
+// vector.cpp - method implementation
+void Point::offset(double offsetX, double offsetY) {
+x += offsetX; y += offsetY;
+}
+void Point::print() {
+cout << "(" << x << "," << y << ")";
+}
+void Vector::offset(double offsetX, double offsetY) {
+start.offset(offsetX, offsetY);
+end.offset(offsetX, offsetY);
+}
+:: indicates which class’ method is being
+void Vector::print() {
+start.print();
+implemented
+cout << " -> ";
+end.print();
+cout << endl;
+}
+-----------------------------------------------------
+CONSTRUCTOR
+class MITStudent {
+public:
+int studentID;
+char *name;
+MITStudent() {
+studentID = 0;
+name = "";
+}
+};
+-----------------------------------------
+PUBLIC and PRIVATE
+//class: private by default
+
+
+class Point {
+private:
+double x, y;
+public:
+Point(double nx, double ny) {
+x = nx; y = ny;
+}
+};
+int main() {
+Point p(2.0,3.0);
+p.x = 5.0; // not allowed
+}
+------------------------------------
+//public by default 
+struct Point {
+double x;
+double y;
+};

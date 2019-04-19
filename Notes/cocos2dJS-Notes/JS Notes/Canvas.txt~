@@ -1,0 +1,944 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+#mycanvas{
+   border:1px solid red;
+}
+</style>
+</head>
+<body>
+   <canvas id="mycanvas" width="100" height="100"></canvas>
+</body>
+</html>
+
+
+//script to be put inside body with in <script></script>
+
+var canvas  = document.getElementById("mycanvas");
+if (canvas.getContext){   
+   var ctx = canvas.getContext('2d');   
+   // drawing code here   
+} else {   
+   // canvas-unsupported code here 
+}  
+
+/////////////////////////////////////////////////////////////
+
+Drawing Rectangles
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // Get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+
+    // Draw shapes
+    ctx.fillRect(25,25,100,100);
+    ctx.clearRect(45,45,60,60);
+    ctx.strokeRect(50,50,50,50);
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+/////////////////////////////////////////////////////////////////////////
+
+Drawing Paths
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+
+    // Draw shapes
+    ctx.beginPath();
+    ctx.arc(75,75,50,0,Math.PI*2,true);  // Outer circle
+    ctx.moveTo(110,75);
+    ctx.arc(75,75,35,0,Math.PI,false);   // Mouth
+    ctx.moveTo(65,65);
+    ctx.arc(60,65,5,0,Math.PI*2,true);  // Left eye
+    ctx.moveTo(95,65);
+    ctx.arc(90,65,5,0,Math.PI*2,true);  // Right eye
+    ctx.stroke();
+
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+DRAWING LINES
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+ 
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+ 
+    // Filled triangle
+    ctx.beginPath();
+    ctx.moveTo(25,25);
+    ctx.lineTo(105,25);
+    ctx.lineTo(25,105);
+    ctx.fill();
+    
+    // Stroked triangle
+    ctx.beginPath();
+    ctx.moveTo(125,125);
+    ctx.lineTo(125,45);
+    ctx.lineTo(45,125);
+    ctx.closePath();
+    ctx.stroke();
+ 
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+/////////////////////////////////////////////////////////////////////////////////////////
+DRAWING BEZIER
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+
+    ctx.beginPath();
+    ctx.moveTo(75,40);
+    ctx.bezierCurveTo(75,37,70,25,50,25);
+    ctx.bezierCurveTo(20,25,20,62.5,20,62.5);
+    ctx.bezierCurveTo(20,80,40,102,75,120);
+    ctx.bezierCurveTo(110,102,130,80,130,62.5);
+    ctx.bezierCurveTo(130,62.5,130,25,100,25);
+    ctx.bezierCurveTo(85,25,75,37,75,40);
+    ctx.fill();
+
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+/////////////////////////////////////////////////////////////////////////////////////////////////
+DRAWING QUADRATIC CURVE
+	beginPath()
+This method resets the current path.
+2	moveTo(x, y)
+This method creates a new subpath with the given point.
+3	closePath()
+This method marks the current subpath as closed, and starts a new subpath with a point the same as the start and end of the newly closed subpath.
+4	fill()
+This method fills the subpaths with the current fill style.
+5	stroke()
+This method strokes the subpaths with the current stroke style.
+6	quadraticCurveTo(cpx, cpy, x, y)
+This method adds the given point to the current path, connected to the previous one by a quadratic Bezier curve with the given control point.
+
+The x and y parameters in quadraticCurveTo() method are the coordinates of the end point. cpx and cpy are the coordinates of the control point.
+Example:
+
+Following is a simple example which makes use of above mentioned methods to draw a Quadratic curves.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+
+   // Draw shapes
+    ctx.beginPath();
+    ctx.moveTo(75,25);
+    ctx.quadraticCurveTo(25,25,25,62.5);
+    ctx.quadraticCurveTo(25,100,50,100);
+    ctx.quadraticCurveTo(50,120,30,125);
+    ctx.quadraticCurveTo(60,120,65,100);
+    ctx.quadraticCurveTo(125,100,125,62.5);
+    ctx.quadraticCurveTo(125,25,75,25);
+    ctx.stroke();
+
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+////////////////////////////////////////////////////////////////////////////////////////////
+DRAWING  IMAGES
+
+1	beginPath()
+This method resets the current path.
+2	moveTo(x, y)
+This method creates a new subpath with the given point.
+3	closePath()
+This method marks the current subpath as closed, and starts a new subpath with a point the same as the start and end of the newly closed subpath.
+4	fill()
+This method fills the subpaths with the current fill style.
+5	stroke()
+This method strokes the subpaths with the current stroke style.
+6	drawImage(image, dx, dy)
+This method draws the given image onto the canvas. Here image is a reference to an image or canvas object. x and y form the coordinate on the target canvas where our image should be placed.
+Example:
+
+Following is a simple example which makes use of above mentioned methods to import an draw on an image.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+
+    // Draw shapes
+    var img = new Image();
+    img.src = '/images/backdrop.jpg';
+
+    img.onload = function(){
+       ctx.drawImage(img,0,0);
+       ctx.beginPath();
+       ctx.moveTo(30,96);
+       ctx.lineTo(70,66);
+       ctx.lineTo(103,76);
+       ctx.lineTo(170,15);
+       ctx.stroke();
+   }
+
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Gradient
+1	addColorStop(offset, color)
+This method adds a color stop with the given color to the gradient at the given offset. Here 0.0 is the offset at one end of the gradient, 1.0 is the offset at the other end.
+2	createLinearGradient(x0, y0, x1, y1)
+This method returns a CanvasGradient object that represents a linear gradient that paints along the line given by the coordinates represented by the arguments. The four arguments represent the starting point (x1,y1) and end point (x2,y2) of the gradient.
+3	createRadialGradient(x0, y0, r0, x1, y1, r1)
+This method returns a CanvasGradient object that represents a radial gradient that paints along the cone given by the circles represented by the arguments. The first three arguments define a circle with coordinates (x1,y1) and radius r1 and the second a circle with coordinates (x2,y2) and radius r2.
+Linear Gradient Example:
+
+Following is a simple example which makes use of above mentioned methods to create Linear gradient.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+
+    // Create Linear Gradients
+    var lingrad = ctx.createLinearGradient(0,0,0,150);
+    lingrad.addColorStop(0, '#00ABEB');
+    lingrad.addColorStop(0.5, '#fff');
+    lingrad.addColorStop(0.5, '#66CC00');
+    lingrad.addColorStop(1, '#fff');
+
+    var lingrad2 = ctx.createLinearGradient(0,50,0,95);
+    lingrad2.addColorStop(0.5, '#000');
+    lingrad2.addColorStop(1, 'rgba(0,0,0,0)');
+
+    // assign gradients to fill and stroke styles
+    ctx.fillStyle = lingrad;
+    ctx.strokeStyle = lingrad2;
+    // draw shapes
+    ctx.fillRect(10,10,130,130);
+    ctx.strokeRect(50,50,50,50);
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+/////////////////////////////////////////////////////////////////////////////////////////////////
+1	fillStyle
+This attribute represents the color or style to use inside the shapes.
+2	strokeStyle
+This attribute represents the color or style to use for the lines around shapes
+
+By default, the stroke and fill color are set to black which is CSS color value #000000.
+A fillStyle Example:
+
+Following is a simple example which makes use of above mentioned fillStyle attribute to create a nice pattern.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+
+    // Create a pattern
+    for (var i=0;i<7;i++){   
+      for (var j=0;j<7;j++){   
+       ctx.fillStyle='rgb(' + Math.floor(255-20.5*i)+ ','+    
+                       Math.floor(255 - 42.5*j) + ',255)';   
+        ctx.fillRect( j*25, i* 25, 55, 55 );   
+      }   
+    }
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+
+    // Create a pattern
+    for (var i=0;i<10;i++){   
+      for (var j=0;j<10;j++){   
+       ctx.strokeStyle='rgb(255,'+ Math.floor(50-2.5*i)+','+ 
+                     Math.floor(155 - 22.5 * j ) + ')';
+       ctx.beginPath();
+       ctx.arc(1.5+j*25, 1.5 + i*25,10,10,Math.PI*5.5, true);
+       ctx.stroke(); 
+      }   
+    }
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+Text and Font
+1	font [ = value ]
+This property returns the current font settings and can be set, to change the font.
+2	textAlign [ = value ]
+This property returns the current text alignment settings and can be set, to change the alignment. The possible values are start, end, left, right, and center.
+3	textBaseline [ = value ]
+This property returns the current baseline alignment settings and can be set, to change the baseline alignment. The possible values are top, hanging, middle , alphabetic, ideographic and bottom
+4	fillText(text, x, y [, maxWidth ] )
+This property fills the given text at the given position indicated by the given coordinates x and y.
+5	strokeText(text, x, y [, maxWidth ] )
+This property strokes the given text at the given position indicated by the given coordinates x and y.
+Example:
+
+Following is a simple example which makes use of above mentioned attributes to draw a text:
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+ 
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+ 
+    ctx.fillStyle    = '#00F';
+    ctx.font         = 'Italic 30px Sans-Serif';
+    ctx.textBaseline = 'Top';
+    ctx.fillText  ('Hello world!', 40, 100);
+
+    ctx.font         = 'Bold 30px Sans-Serif';
+    ctx.strokeText('Hello world!', 40, 50); 
+  
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+//////////////////////////////////////////////////////////////////////////////
+Save and Restore
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+ 
+     // use getContext to use the canvas for drawing
+     var ctx = canvas.getContext('2d');
+
+     //  draw a rectangle with default settings
+     ctx.fillRect(0,0,150,150);
+     //  Save the default state
+     ctx.save();      
+            
+     // Make changes to the settings
+     ctx.fillStyle = '#66FFFF'       
+     ctx.fillRect( 15,15,120,120); 
+     // Save the current state
+     ctx.save();                  
+    
+     // Make the new changes to the settings
+     ctx.fillStyle = '#993333'       
+     ctx.globalAlpha = 0.5;    
+     ctx.fillRect(30,30,90,90);
+
+     // Restore previous state
+     ctx.restore();
+     // Draw a rectangle with restored settings               
+     ctx.fillRect(45,45,60,60);   
+
+     // Restore original state
+     ctx.restore();
+     // Draw a rectangle with restored settings          
+     ctx.fillRect(40,40,90,90);  
+  
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+/////////////////////////////////////////////////////////////////////////
+pattern and shadows
+Create Pattern:
+
+There is following method required to create a pattern on the canvas:
+SN	Method and Description
+1	createPattern(image, repetition)
+This method will use image to create the pattern. The second argument could be a string with one of the following values: repeat, repeat-x, repeat-y, and no-repeat. If the empty string or null is specified, repeat will. be assumed
+Example:
+
+Following is a simple example which makes use of above mentioned method to create a nice pattern.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+ 
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+ 
+    // create new image object to use as pattern
+    var img = new Image();
+    img.src = 'images/pattern.jpg';
+    img.onload = function(){
+       // create pattern
+       var ptrn = ctx.createPattern(img,'repeat');
+       ctx.fillStyle = ptrn;
+       ctx.fillRect(0,0,150,150);
+    }
+ 
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+
+Assuming we have following pattern images/pattern.jpg.
+Pattern
+
+The above example would draw following result:
+Canvas Pattern
+
+To learn above concept - Do Online Practice using latest version of either Safari or Opera.
+Create Shadows:
+
+HTML5 canvas provides capabilities to create nice shadows around the drawings. All drawing operations are affected by the four global shadow attributes
+SN	Property and Description
+1	shadowColor [ = value ]
+This property returns the current shadow color and can be set, to change the shadow color.
+2	shadowOffsetX [ = value ]
+This property returns the current shadow offset X and can be set, to change the shadow offset X.
+3	shadowOffsetY [ = value ]
+This property returns the current shadow offset Y and can be set, change the shadow offset Y.
+4	shadowBlur [ = value ]
+This property returns the current level of blur applied to shadows and can be set, to change the blur level.
+Example:
+
+Following is a simple example which makes use of above mentioned attributes to draw a shadow.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+ 
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+ 
+    ctx.shadowOffsetX = 2;   
+    ctx.shadowOffsetY = 2;   
+    ctx.shadowBlur = 2;   
+    ctx.shadowColor = "rgba(0, 0, 0, 0.5)";   
+  
+    ctx.font = "20px Times New Roman";   
+    ctx.fillStyle = "Black";   
+    ctx.fillText("This is shadow test", 5, 30);   
+  
+  } else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas"></canvas>
+</body>
+</html>
+///////////////////////////////////////////
+Translate
+
+HTML5 canvas provides translate(x, y) method which is used to move the canvas and its origin to a different point in the grid.
+
+Here argument x is the amount the canvas is moved to the left or right, and y is the amount it's moved up or down
+Example:
+
+Following is a simple example which makes use of above method to draw various Spirographs:
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+    ctx.fillRect(0,0,300,300);
+    for (i=0;i<3;i++) {
+       for (j=0;j<3;j++) {
+         ctx.save();
+         ctx.strokeStyle = "#FF0066";
+         ctx.translate(50+j*100,50+i*100);
+         drawSpirograph(ctx,10*(j+3)/(j+2),-2*(i+3)/(i+1),10);
+         ctx.restore();
+       }
+    }
+  }else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+
+function drawSpirograph(ctx,R,r,O){
+  var x1 = R-O;
+  var y1 = 0;
+  var i  = 1;
+  ctx.beginPath();
+  ctx.moveTo(x1,y1);
+  do {
+    if (i>20000) break;
+    var x2 = (R+r)*Math.cos(i*Math.PI/72) - 
+             (r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72))
+    var y2 = (R+r)*Math.sin(i*Math.PI/72) - 
+             (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72))
+    ctx.lineTo(x2,y2);
+    x1 = x2;
+    y1 = y2;
+    i++;
+  } while (x2 != R-O && y2 != 0 );
+  ctx.stroke();
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas" width="400" height="400"></canvas>
+</body>
+</html>
+//////////////////////////////////////////////////////////////
+Rotation
+HTML5 canvas provides rotate(angle) method which is used to rotate the canvas around the current origin.
+
+This method only takes one parameter and that's the angle the canvas is rotated by. This is a clockwise rotation measured in radians.
+Example:
+
+Following is a simple example which we are running two loops where first loop determines the number of rings, and the second determines the number of dots drawn in each ring.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+    // use getContext to use the canvas for drawing
+    var ctx = canvas.getContext('2d');
+    ctx.translate(100,100);
+    for (i=1; i<7; i++){
+       ctx.save();
+       ctx.fillStyle = 'rgb('+(51*i)+','+(200-51*i)+',0)';
+       for (j=0; j < i*6; j++){
+          ctx.rotate(Math.PI*2/(i*6));
+          ctx.beginPath();
+          ctx.arc(0,i*12.5,5,0,Math.PI*2,true);
+          ctx.fill();
+       }
+       ctx.restore();
+     }
+  }else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas" width="400" height="400"></canvas>
+</body>
+</html>
+///////////////////////////////////////////////////////////////
+Scaling
+HTML5 canvas provides scale(x, y) method which is used to increase or decrease the units in our canvas grid. This can be used to draw scaled down or enlarged shapes and bitmaps.
+
+This method takes two parameters where x is the scale factor in the horizontal direction and y is the scale factor in the vertical direction. Both parameters must be positive numbers.
+
+Values smaller than 1.0 reduce the unit size and values larger than 1.0 increase the unit size. Setting the scaling factor to precisely 1.0 doesn't affect the unit size.
+Example:
+
+Following is a simple example which uses spirograph function to draw nine shapes with different scaling factors.
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+         // use getContext to use the canvas for drawing
+         var ctx = canvas.getContext('2d');
+         ctx.strokeStyle = "#fc0";
+	ctx.lineWidth = 1.5;
+	ctx.fillRect(0,0,300,300);
+
+	// Uniform scaling
+	ctx.save()
+	ctx.translate(50,50);
+	drawSpirograph(ctx,22,6,5);
+
+	ctx.translate(100,0);
+	ctx.scale(0.75,0.75);
+	drawSpirograph(ctx,22,6,5);
+
+	ctx.translate(133.333,0);
+	ctx.scale(0.75,0.75);
+	drawSpirograph(ctx,22,6,5);
+	ctx.restore();
+
+	// Non uniform scaling (y direction)
+	ctx.strokeStyle = "#0cf";
+	ctx.save()
+	ctx.translate(50,150);
+	ctx.scale(1,0.75);
+	drawSpirograph(ctx,22,6,5);
+
+	ctx.translate(100,0);
+	ctx.scale(1,0.75);
+	drawSpirograph(ctx,22,6,5);
+
+	ctx.translate(100,0);
+	ctx.scale(1,0.75);
+	drawSpirograph(ctx,22,6,5);
+	ctx.restore();
+
+	// Non uniform scaling (x direction)
+	ctx.strokeStyle = "#cf0";
+	ctx.save()
+	ctx.translate(50,250);
+	ctx.scale(0.75,1);
+	drawSpirograph(ctx,22,6,5);
+
+	ctx.translate(133.333,0);
+	ctx.scale(0.75,1);
+	drawSpirograph(ctx,22,6,5);
+
+	ctx.translate(177.777,0);
+	ctx.scale(0.75,1);
+	drawSpirograph(ctx,22,6,5);
+	ctx.restore();
+
+  }else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+ 
+function drawSpirograph(ctx,R,r,O){
+  var x1 = R-O;
+  var y1 = 0;
+  var i  = 1;
+  ctx.beginPath();
+  ctx.moveTo(x1,y1);
+  do {
+    if (i>20000) break;
+    var x2 = (R+r)*Math.cos(i*Math.PI/72) - 
+             (r+O)*Math.cos(((R+r)/r)*(i*Math.PI/72))
+    var y2 = (R+r)*Math.sin(i*Math.PI/72) - 
+             (r+O)*Math.sin(((R+r)/r)*(i*Math.PI/72))
+    ctx.lineTo(x2,y2);
+    x1 = x2;
+    y1 = y2;
+    i++;
+  } while (x2 != R-O && y2 != 0 );
+  ctx.stroke();
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas" width="400" height="400"></canvas>
+</body>
+</html>
+////////////////////////////////////////////////////////////////////////
+HTML5 canvas provides methods which allow modifications directly to the transformation matrix. The transformation matrix must initially be the identity transform. It may then be adjusted using the transformation methods.
+SN	Method and Description
+1	transform(m11, m12, m21, m22, dx, dy)
+This method changes the transformation matrix to apply the matrix given by the arguments.
+2	setTransform(m11, m12, m21, m22, dx, dy)
+This method changes the transformation matrix to the matrix given by the arguments .
+
+The transform(m11, m12, m21, m22, dx, dy) method must multiply the current transformation matrix with the matrix described by:
+
+m11     m21     dx
+m12     m22     dy
+0       0       1
+
+The setTransform(m11, m12, m21, m22, dx, dy) method must reset the current transform to the identity matrix, and then invoke the transform(m11, m12, m21, m22, dx, dy) method with the same arguments.
+Example:
+
+Following is a simple example which makes use of transform() and setTransform() methods:
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+     // use getContext to use the canvas for drawing
+     var ctx = canvas.getContext('2d');
+
+     var sin = Math.sin(Math.PI/6);   
+     var cos = Math.cos(Math.PI/6);   
+     ctx.translate(200, 200);   
+     var c = 0;   
+     
+     for (var i=0; i <= 12; i++) {   
+       c = Math.floor(255 / 12 * i);   
+       ctx.fillStyle = "rgb(" + c + "," + c + "," + c + ")";   
+       ctx.fillRect(0, 0, 100, 100);   
+       ctx.transform(cos, sin, -sin, cos, 0, 0);   
+     }   
+   
+     ctx.setTransform(-1, 0, 0, 1, 200, 200);   
+     ctx.fillStyle = "rgba(100, 100, 255, 0.5)";   
+     ctx.fillRect(50, 50, 100, 100);   
+  }else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas" width="400" height="400"></canvas>
+</body>
+</html>
+/////////////////////////////////////////////////////////////////////////
+transformation matrix
+
+HTML5 canvas provides methods which allow modifications directly to the transformation matrix. The transformation matrix must initially be the identity transform. It may then be adjusted using the transformation methods.
+SN	Method and Description
+1	transform(m11, m12, m21, m22, dx, dy)
+This method changes the transformation matrix to apply the matrix given by the arguments.
+2	setTransform(m11, m12, m21, m22, dx, dy)
+This method changes the transformation matrix to the matrix given by the arguments .
+
+The transform(m11, m12, m21, m22, dx, dy) method must multiply the current transformation matrix with the matrix described by:
+
+m11     m21     dx
+m12     m22     dy
+0       0       1
+
+The setTransform(m11, m12, m21, m22, dx, dy) method must reset the current transform to the identity matrix, and then invoke the transform(m11, m12, m21, m22, dx, dy) method with the same arguments.
+Example:
+
+Following is a simple example which makes use of transform() and setTransform() methods:
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type="text/javascript">
+function drawShape(){
+  // get the canvas element using the DOM
+  var canvas = document.getElementById('mycanvas');
+ 
+  // Make sure we don't execute when canvas isn't supported
+  if (canvas.getContext){
+     // use getContext to use the canvas for drawing
+     var ctx = canvas.getContext('2d');
+
+     var sin = Math.sin(Math.PI/6);   
+     var cos = Math.cos(Math.PI/6);   
+     ctx.translate(200, 200);   
+     var c = 0;   
+     
+     for (var i=0; i <= 12; i++) {   
+       c = Math.floor(255 / 12 * i);   
+       ctx.fillStyle = "rgb(" + c + "," + c + "," + c + ")";   
+       ctx.fillRect(0, 0, 100, 100);   
+       ctx.transform(cos, sin, -sin, cos, 0, 0);   
+     }   
+   
+     ctx.setTransform(-1, 0, 0, 1, 200, 200);   
+     ctx.fillStyle = "rgba(100, 100, 255, 0.5)";   
+     ctx.fillRect(50, 50, 100, 100);   
+  }else {
+    alert('You need Safari or Firefox 1.5+ to see this demo.');
+  }
+}
+</script>
+</head>
+<body onload="drawShape();">
+   <canvas id="mycanvas" width="400" height="400"></canvas>
+</body>
+</html>
+//////////////////////////////////////////////////////
+

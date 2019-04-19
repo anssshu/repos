@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html class="js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths ready"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<title>Crafty.js workshop</title>
+	<meta name="viewport" content="width=1024">
+
+        <link rel="stylesheet" href="Crafty.js%20workshop_files/coderdeck-core.css" type="text/css">
+	<link rel="stylesheet" id="style-theme-link" href="Crafty.js%20workshop_files/coderdeck.css" type="text/css">
+
+	<script src="Crafty.js%20workshop_files/jquery.js"></script>
+	<script src="Crafty.js%20workshop_files/modernizr.js"></script>
+</head>
+<body class="deck-container on-slide-0">
+
+<div id="dic_bubble" class="selection_bubble fontSize13 noSelect" style="z-index: 9999; border: 1px solid rgb(74, 174, 222); visibility: hidden;"></div><script type="text/coderdeck" id="coderdeck-default">
+  <html>
+    <head>
+      <script src='dist/jquery.min.js'>SCRIPTEND
+      <script src='js/crafty.js'>SCRIPTEND
+    </head>
+    <body>
+    <script>
+	    CODE
+    SCRIPTEND
+    </body>
+</html>
+</script>
+
+
+
+<script type="text/coderdeck" id="crafty-template">
+  <html>
+    <head>
+      <script src='dist/jquery.min.js'>SCRIPTEND
+      <script src='js/crafty.js'>SCRIPTEND
+    </head>
+    <body>
+    <script>
+$(document).ready(function() {
+
+  Crafty.init(640,480).canvas.init();
+  Crafty.background("black");
+
+  CODE
+});
+    SCRIPTEND
+    </body>
+</html>
+</script>
+
+
+<script type="text/coderdeck" id="crafty-separate-template">
+  <html>
+    <head>
+      <script src='dist/jquery.min.js'>SCRIPTEND
+      <script src='js/crafty.js'>SCRIPTEND
+    </head>
+    <body>
+    <script>
+$(document).ready(function() {
+
+  Crafty.init(640,480).canvas.init();
+  Crafty.background("black");
+
+  startGame();
+});
+    SCRIPTEND
+
+
+    CODE
+
+    </body>
+</html>
+</script>
+
+
+<article id="slide-0" data-slide-id="0" class="slide slide-subhead deck-current">
+<h1>Crafty.js </h1>
+<h2><a target="_blank" href="http://bit.ly/crafty-workshop">http://bit.ly/crafty-workshop</a><br>
+       
+        use the arrow-keys go between slides.<br><br>
+      <a target="_blank" href="http://craftyjs.com/">http://craftyjs.com/</a><br><br>
+      <a target="_blank" href="http://cykod.com/blog">Pascal Rettig</a> / <a target="_blank" href="http://twitter.com/cykod">@cykod</a><br>
+      Built in <a target="_blank" href="https://github.com/cykod/CoderDeck">CoderDeck</a>
+     
+        </h2>
+</article>
+
+<article id="slide-1" data-slide-id="1" class="slide slide-subhead deck-next">
+<h1>Why Crafty?</h1>
+</article>
+
+
+
+<article id="slide-2" data-slide-id="2" class="slide slide-list deck-after">
+<h2>A Good Engine for the Web</h2>
+<ul>
+<li id="slide-3" data-slide-id="3" class="slide deck-after">
+	<h3>Small: 15k compressed and gzip'd</h3>
+</li>
+<li id="slide-4" data-slide-id="4" class="slide deck-after">
+	<h3>Simple: 1 file to include</h3>
+</li>
+<li id="slide-5" data-slide-id="5" class="slide deck-after">
+	<h3>DOM or Canvas Rendering</h3>
+</li>
+<li id="slide-6" data-slide-id="6" class="slide deck-after">
+	<h3>Open-source: MIT or GPL (Take it and do what you will)</h3>
+</li>
+</ul>
+</article>
+
+
+
+<article id="slide-7" data-slide-id="7" class="slide slide-list deck-after">
+<h2>A Good Engine for Javascript</h2>
+<ul>
+<li id="slide-8" data-slide-id="8" class="slide deck-after">
+	<h3>No classical inheritance model (Protoypes! Javscript is made of Prototypes!)</h3>
+</li>
+<li id="slide-9" data-slide-id="9" class="slide deck-after">
+	<h3><a target="_blank" href="http://cowboyprogramming.com/2007/01/05/evolve-your-heirachy/">Entity-component system</a> instead</h3>
+</li>
+<li id="slide-10" data-slide-id="10" class="slide deck-after">
+	<h3>Entities (sprites) built up out of reusable components.</h3>
+</li>
+<li id="slide-11" data-slide-id="11" class="slide deck-after">
+	<h3>jQuery style selector mechanism for working with entities</h3>
+</li>
+<li id="slide-12" data-slide-id="12" class="slide deck-after">
+	<h3>Good Event support to reduced coupling</h3>
+</li>
+</ul>
+</article>
+
+
+<article id="slide-13" data-slide-id="13" class="slide slide-list deck-after">
+<h2>A Good box of Tools</h2>
+<ul>
+	<li id="slide-14" data-slide-id="14" class="slide deck-after">
+		<h3>Asset Loading</h3>
+	</li>
+	<li id="slide-15" data-slide-id="15" class="slide deck-after">
+		<h3>Sprite Map support</h3>
+	</li>
+	<li id="slide-16" data-slide-id="16" class="slide deck-after">
+		<h3>Audio Support</h3>
+	</li>
+	<li id="slide-17" data-slide-id="17" class="slide deck-after">
+		<h3>Isometric support</h3>
+	</li>
+	<li id="slide-18" data-slide-id="18" class="slide deck-after">
+		<h3>SAT collision detection</h3>
+	</li>
+</ul>
+</article>
+
+
+<article id="slide-19" data-slide-id="19" class="slide slide-list deck-after">
+<h2>Using Crafty</h2>
+<p>Just include the crafty.js file, and then your game code, whatever that is</p>
+<pre class="prettyprint"><span class="dec">&lt;!DOCTYPE html&gt;</span><span class="pln"> 
+</span><span class="tag">&lt;html&gt;</span><span class="pln"> 
+    </span><span class="tag">&lt;head&gt;</span><span class="pln"> 
+        </span><span class="tag">&lt;title&gt;</span><span class="pln">My Awesome Game</span><span class="tag">&lt;/title&gt;</span><span class="pln">
+        </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"crafty.js"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln"> 
+        </span><span class="tag">&lt;script</span><span class="pln"> </span><span class="atn">src</span><span class="pun">=</span><span class="atv">"game.js"</span><span class="pln"> </span><span class="atn">type</span><span class="pun">=</span><span class="atv">"text/javascript"</span><span class="tag">&gt;&lt;/script&gt;</span><span class="pln"> 
+    </span><span class="tag">&lt;/head&gt;</span><span class="pln"> 
+    </span><span class="tag">&lt;body&gt;</span><span class="pln"> 
+    </span><span class="tag">&lt;/body&gt;</span><span class="pln"> 
+</span><span class="tag">&lt;/html&gt;</span></pre>
+</article>
+
+<article id="slide-20" data-slide-id="20" class="slide slide-list deck-after">
+<h2>Bootstrapping Crafty</h2>
+<pre class="prettyprint"><span class="com">// When the DOM has loaded</span><span class="pln">
+$(document)</span><span class="pun">.</span><span class="pln">ready(</span><span class="kwd">function</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+  </span><span class="com">// Initialize Crafty</span><span class="pln">
+  </span><span class="typ">Crafty</span><span class="pun">.</span><span class="pln">init(</span><span class="lit">640</span><span class="pun">,</span><span class="pln"> </span><span class="com">// 640 Pixels Wide</span><span class="pln">
+              </span><span class="lit">480</span><span class="pln">  </span><span class="com">// 480 Pixels Tall</span><span class="pln">
+              </span><span class="pun">);</span><span class="pln">
+
+  </span><span class="typ">Crafty</span><span class="pun">.</span><span class="pln">canv</span><span class="kwd">as</span><span class="pun">.</span><span class="pln">init(); </span><span class="com">// Create a Canvas Element </span><span class="pln">
+
+</span><span class="pun">});</span></pre>
+</article>
+
+<article id="slide-21" data-slide-id="21" class="slide slide-list deck-after">
+<h2>Add Some Entities + Components</h2>
+<pre class="prettyprint"><span class="com">// Create a player entity</span><span class="pln">
+</span><span class="kwd">var</span><span class="pln"> player </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Crafty</span><span class="pun">.</span><span class="pln">e(); 
+
+</span><span class="com">// Add some components to the entity</span><span class="pln">
+player</span><span class="pun">.</span><span class="pln">add</span><span class="typ">Component</span><span class="pun">(</span><span class="str">"2D, Canvas, Color"</span><span class="pun">);</span><span class="pln"> 
+
+</span><span class="com">// Set some attribute values </span><span class="pln">
+</span><span class="com">// (Available methods dependant on components added)</span><span class="pln">
+player</span><span class="pun">.</span><span class="pln">col</span><span class="kwd">or</span><span class="pun">(</span><span class="str">"red"</span><span class="pun">).</span><span class="pln">attr({ w:</span><span class="lit">50</span><span class="pun">,</span><span class="pln"> h:</span><span class="lit">50</span><span class="pln"> </span><span class="pun">});</span></pre>
+</article>
+
+<article id="slide-22" data-slide-id="22" class="slide slide-list deck-after">
+<h2>Putting it all together</h2>
+<p>Let's Bootstrap crafty and start our Game</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-22"><textarea style="position: static;" data-target="destination-22" id="editor-22" class="coder-editor" data-language="javascript">$(document).ready(function() {
+
+  Crafty.init(640,480);
+  Crafty.canvas.init();
+
+  var player = Crafty.e(); 
+  player.addComponent("2D, Canvas, Color")
+
+  player.color("red").attr({w:50, h:50});
+});
+</textarea></div><div class="coder-destination" id="destination-22"></div></div>
+</article>
+
+
+
+
+
+<article id="slide-23" data-slide-id="23" class="slide slide-list deck-after">
+<h2>Chaining with Crafty</h2>
+<p>Most of crafty elements support chaining (aka jQuery style)</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-23"><textarea style="position: static;" data-target="destination-23" id="editor-23" class="coder-editor" data-language="javascript">$(document).ready(function() {
+
+  Crafty.init(640,480).canvas.init();
+
+  var player = Crafty.e("2D, Canvas, Color")
+          .color("red")
+          .attr({w:50, h:50});
+});
+</textarea></div><div class="coder-destination" id="destination-23"></div></div>
+</article>
+
+
+<article id="slide-24" data-slide-id="24" class="slide slide-list deck-after">
+<h2>Selection</h2>
+<p>Calling Crafty as a function will do component-based selection (However, <code>Crafty("Color").color("red");</code> won't work, primarily for performance reasons (<a target="_blank" href="https://github.com/louisstow/Crafty/issues/91">Issue 91</a>, we need to use each instead)</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-24"><textarea style="position: static;" data-target="destination-24" id="editor-24" class="coder-editor" data-language="javascript">$(document).ready(function() {
+
+  Crafty.init(640,480).canvas.init();
+
+  var box1 = Crafty.e("2D, Canvas, Color").attr({w:50, h:50}).color("red");
+  var box2 = Crafty.e("2D, Canvas, Color").attr({w:50, h:50, x:100}).color("blue");
+
+  //Crafty("Color").each(function() { this.color("pink"); });
+
+});
+</textarea></div><div class="coder-destination" id="destination-24"></div></div>
+</article>
+
+<article id="slide-25" data-slide-id="25" class="slide slide-list deck-after">
+<h2>Controls</h2>
+<p>We can add a simple four-way controls component (You'll need to click in the black iframe on the right)</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-25"><textarea style="position: static;" data-target="destination-25" id="editor-25" class="coder-editor" data-language="javascript">$(document).ready(function() {
+
+  Crafty.init(640,480).canvas.init();
+  Crafty.background("black");
+
+  var player = Crafty.e("2D, Canvas, Color")
+          .color("red")
+          .attr({w:50, h:50});
+
+
+  // Can use the arrow keys as well,
+  // but we don't want to accidentally change slides
+  player.addComponent("Fourway").fourway(5)
+});
+</textarea></div><div class="coder-destination" id="destination-25"></div></div>
+</article>
+
+<article id="slide-26" data-slide-id="26" class="slide slide-list deck-after">
+<h2>2 Player Controls</h2>
+<p>Why stick with 1 player? Let's add another, speedier player, use custom Multiway keys</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-26"><textarea style="position: static;" data-target="destination-26" id="editor-26" class="coder-editor" data-language="javascript">$(document).ready(function() {
+
+  Crafty.init(640,480).canvas.init();
+  Crafty.background("black");
+
+  var player1 = Crafty.e("2D, Canvas, Color")
+          .color("red")
+          .attr({w:50, h:50});
+
+
+  var player2 = Crafty.e("2D, Canvas, Color")
+          .color("green")
+          .attr({w:50, h:50, x: 50, y:50});
+
+
+  player1.addComponent("Multiway").multiway(3,{ 
+          W: -90, S: 90, D: 0, A: 180});
+
+  player2.addComponent("Multiway").multiway(10,{ 
+          UP_ARROW: -90, DOWN_ARROW: 90, 
+          RIGHT_ARROW: 0, LEFT_ARROW: 180});
+});
+</textarea></div><div class="coder-destination" id="destination-26"></div></div>
+</article>
+
+
+<article id="slide-27" data-slide-id="27" class="slide slide-list deck-after">
+<h2>Simple Collision Detection</h2>
+<p>Let's prevent our players from running over each other. <a target="_blank" href="http://craftyjs.com/api/Collision.html">Docs</a></p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-27"><textarea style="position: static;" data-target="destination-27" id="editor-27" class="coder-editor" data-language="javascript">$(document).ready(function() {
+
+  Crafty.init(640,480).canvas.init();
+  Crafty.background("black");
+
+  var player1 = Crafty.e("2D, Canvas, Color")
+          .color("red")
+          .attr({w:50, h:50});
+
+
+  var player2 = Crafty.e("2D, Canvas, Color")
+          .color("green")
+          .attr({w:50, h:50, x: 50, y:50});
+
+  /* Collision Code */
+  player1.addComponent("Collision").bind('Moved', function(from) {
+    if(this.hit('2D')) {
+       this.attr({x: from.x, y:from.y});
+    }
+  });
+  player2.addComponent("Collision").bind('Moved', function(from) {
+    if(this.hit('2D')) {
+       this.attr({x: from.x, y:from.y});
+    }
+  });
+
+
+
+  player1.addComponent("Multiway").multiway(3,{ 
+          W: -90, S: 90, D: 0, A: 180});
+
+  player2.addComponent("Multiway").multiway(10,{ 
+          UP_ARROW: -90, DOWN_ARROW: 90, 
+          RIGHT_ARROW: 0, LEFT_ARROW: 180});
+});
+</textarea></div><div class="coder-destination" id="destination-27"></div></div>
+</article>
+
+<article id="slide-28" data-slide-id="28" class="slide slide-list deck-after">
+<h2>Gravity</h2>
+<p>Let's add in the Gravity component. Note: code below s going to skip the initial stuff to save space.</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-28"><textarea style="position: static;" data-target="destination-28" id="editor-28" class="coder-editor" data-coder-template="crafty-template" data-language="javascript">  var player1 = Crafty.e("2D, Canvas, Color")
+       .color("white")
+       .attr({w:50, h:50, x:150});
+
+  player1.addComponent('Gravity').gravity();
+</textarea></div><div class="coder-destination" id="destination-28"></div></div>
+</article>
+
+
+<article id="slide-29" data-slide-id="29" class="slide slide-list deck-after">
+<h2>Adding in a floor</h2>
+<p>Let's add in a floor</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-29"><textarea style="position: static;" data-target="destination-29" id="editor-29" class="coder-editor" data-coder-template="crafty-template" data-language="javascript">
+  var player = Crafty.e("2D, Canvas, Color, Player, Physics")
+       .color("white")
+       .attr({w:50, h:50, x:126, y:0});
+
+  player.addComponent('Gravity').gravity("Floor");
+  player.addComponent("Twoway").twoway(5,50)
+  player.addComponent("Collision");
+
+
+  var floor = Crafty.e("2D, Canvas, Color, Collision, Floor")
+		.color("blue")
+ 	        .attr({h:30, w:400, x:0, y:380 })
+</textarea></div><div class="coder-destination" id="destination-29"></div></div>
+</article>
+
+
+<article id="slide-30" data-slide-id="30" class="slide slide-list deck-after">
+<h2>platformer collisions :(</h2>
+<p>Built in controls / collisions aren't good for platformers</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-30"><textarea style="position: static;" data-target="destination-30" id="editor-30" class="coder-editor" data-coder-template="crafty-template" data-language="javascript">
+  var player = Crafty.e("2D, Canvas, Color, Player")
+       .color("white")
+       .attr({w:50, h:50, x:126, y:0});
+
+  player.addComponent('Gravity').gravity("Floor");
+  player.addComponent("Twoway").twoway(5)
+  player.addComponent("Collision").collision();
+
+
+  var floor = Crafty.e("2D, Canvas, Color, Collision, Floor")
+		.color("blue")
+		.attr({h:30, w:400, x:0, y:380 })
+		.collision()
+
+  var block = Crafty.e("2D, Canvas, Color, Collision, Block")
+		.color("red")
+		.attr({h:30, w:400, x:50, y:200 })
+		.collision()
+
+  player.onHit("Block",function(hit) {
+    this._falling = false;
+    this.attr({x: this._x + hit[0].normal.y * hit[0].overlap * 1.1, 
+               y: this._y + hit[0].normal.x * hit[0].overlap * 1.1});
+  });
+
+
+</textarea></div><div class="coder-destination" id="destination-30"></div></div>
+</article>
+
+<article id="slide-31" data-slide-id="31" class="slide slide-list deck-after">
+<h2>Let's do a nethack clone instead</h2>
+<p>Asset Loading <a vdh-658904432="" target="_blank" href="http://cykod.github.io/Presentations/HTML5/Crafty/images/dungeon.png">Dungeon</a> <a vdh-658904432="" target="_blank" href="http://cykod.github.io/Presentations/HTML5/Crafty/images/characters.png">Monsters</a> (Assets from <a target="_blank" href="http://rltiles.sourceforge.net/">http://rltiles.sourceforge.net/</a>)</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-31"><textarea style="position: static;" data-target="destination-31" id="editor-31" class="coder-editor" data-coder-template="crafty-template" data-language="javascript">  Crafty.load(["images/dungeon.png",
+               "images/characters.png"], function() {
+     // Our assets are now pre-loaded
+     alert("Yay loaded!");
+  });
+</textarea></div><div class="coder-destination" id="destination-31"></div></div>
+</article>
+
+
+<article id="slide-32" data-slide-id="32" class="slide slide-list deck-after">
+<h2>Scenes..</h2>
+<p>Calling scene will destroy all entities on the page</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-32"><textarea style="position: static;" data-target="destination-32" id="editor-32" class="coder-editor" data-coder-template="crafty-template" data-language="javascript">
+  // Set up a (ugly) loading screen
+  Crafty.scene("loading", function() {
+
+    // Load our assets
+    Crafty.load(["images/dungeon.png","images/characters.png"], function() {
+      // Put in a fake timeout so we can see this in action
+      // DONT do this in a real game please
+      setTimeout(function() { 
+         Crafty.scene("main"); // Play the main scene
+      }, 2000);
+    });
+
+    // White background and some ugle text
+    Crafty.background("#FFF");
+    Crafty.e("2D, DOM, Text").attr({w: 640, h: 20, x: 0, y: 120})
+    .text("Loading")
+    .css({"text-align": "center"});
+  });
+ 
+  Crafty.scene("main",function() {
+    alert("Awesome Main Scene Playing");
+  });
+
+  Crafty.scene("loading");
+</textarea></div><div class="coder-destination" id="destination-32"></div></div>
+</article>
+
+<article id="slide-33" data-slide-id="33" class="slide slide-list deck-after">
+<h2>Sprites</h2>
+<p>Crafty.sprite creates an entity with the name specifieid <a target="_blank" href="http://cykod.github.io/Presentations/HTML5/Crafty/images/dungeon.png">Dungeon</a> <a target="_blank" href="http://cykod.github.io/Presentations/HTML5/Crafty/images/characters.png">Monsters</a></p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-33"><textarea style="position: static;" data-target="destination-33" id="editor-33" class="coder-editor" data-coder-template="crafty-template" data-language="javascript">
+  // This will create entities called floor, wall1 and stairs
+  Crafty.sprite(32,"images/dungeon.png", {
+     floor: [0,0],
+     wall1: [2,1],
+     stairs: [3,1]
+  });
+
+  // This will create entities called hero1 and blob1
+  Crafty.sprite(32,"images/characters.png", {
+     hero1: [5,3],
+     blob1: [4,7]
+  });
+
+  Crafty.scene("loading", function() {
+    Crafty.load(["images/dungeon.png","images/characters.png"], function() {
+         Crafty.scene("main"); // Run the main scene
+    });
+  });
+ 
+  // Let's draw us a Hero and a Blob
+  Crafty.scene("main",function() {
+    Crafty.background("#FFF");
+    var player = Crafty.e("2D, Canvas, hero1")
+         .attr({x:0, y:0});
+
+    var blob = Crafty.e("2D, Canvas, blob1")
+         .attr({x:50, y:50});
+  });
+
+  Crafty.scene("loading");
+</textarea></div><div class="coder-destination" id="destination-33"></div></div>
+</article>
+
+<article id="slide-34" data-slide-id="34" class="slide slide-list deck-after">
+<h2>Binding Controls</h2>
+<p>Let's add movement to our hero</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-34"><textarea style="position: static;" data-target="destination-34" id="editor-34" class="coder-editor" data-coder-template="crafty-template" data-language="javascript">
+Crafty.c("PlayerControls", {
+    _keys: { 
+    UP_ARROW: [0,-1],
+    DOWN_ARROW: [0,1],
+    RIGHT_ARROW: [1,0],
+    LEFT_ARROW: [-1,0],
+    W: [0,-1],
+    S: [0,1],
+    D: [1,0],
+    A: [-1,0],
+    }, 
+
+    init: function() {
+      this._moveX = 0;
+      this._moveY = 0;
+
+      for(var k in this._keys) {
+        var keyCode = Crafty.keys[k] || k;
+        this._keys[keyCode] = this._keys[k];
+      }
+
+      this.bind("KeyDown",function(e) {
+        if(this._keys[e.key]) {
+          this._moveX = this._keys[e.key][0];
+          this._moveY = this._keys[e.key][1];
+        }
+      }).bind("EnterFrame",function() {
+        if(this._moveX || this._moveY) {
+           this.x += this._moveX * 32;
+           this.y += this._moveY * 32;
+           this.trigger('Moved', {x: this.x, y: this.y});
+           this._moveX = 0;
+           this._moveY = 0;
+        }
+      });
+    }
+    
+  });
+
+  Crafty.sprite(32,"images/dungeon.png", {
+     floor: [0,0],
+     wall1: [2,1],
+     stairs: [1,3]
+  });
+
+  Crafty.sprite(32,"images/characters.png", {
+     hero1: [5,3],
+     blob1: [4,7]
+  });
+
+  //the loading screen that will display while our assets load
+  Crafty.scene("loading", function() {
+    Crafty.load(["images/dungeon.png","images/characters.png"], function() {
+         Crafty.scene("main"); //when everything is loaded, run the main scene
+    });
+  });
+ 
+  Crafty.scene("main",function() {
+    Crafty.background("#FFF");
+    var player = Crafty.e("2D, Canvas, PlayerControls, hero1")
+         .attr({x:0, y:0});
+
+    var blob = Crafty.e("2D, Canvas, blob1")
+         .attr({x:50, y:50});
+  });
+
+  Crafty.scene("loading");
+</textarea></div><div class="coder-destination" id="destination-34"></div></div>
+</article>
+
+
+<article id="slide-35" data-slide-id="35" class="slide slide-list deck-after">
+<h2>Separating Movement from Controls</h2>
+<p>Let's separate our movement out from our control and let's make it a 
+little smoother. We'll create a PlayerControls components that just 
+sends "Slide" events to our "Slide" component, which makes our little 
+knight guy slide around the screen. We'll also have the PlayerControls 
+trigger a global "Turn" action which represents 1-turn in our game.</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-35"><textarea style="position: static;" data-target="destination-35" id="editor-35" class="coder-editor" data-coder-template="crafty-template" data-language="javascript">
+Crafty.c("PlayerControls", {
+    _keys: { 
+    UP_ARROW: [0,-1],
+    DOWN_ARROW: [0,1],
+    RIGHT_ARROW: [1,0],
+    LEFT_ARROW: [-1,0],
+    W: [0,-1],
+    S: [0,1],
+    D: [1,0],
+    A: [-1,0],
+    }, 
+
+    init: function() {
+      for(var k in this._keys) {
+        var keyCode = Crafty.keys[k] || k;
+        this._keys[keyCode] = this._keys[k];
+      }
+
+      this.bind("KeyDown",function(e) {
+        if(this._keys[e.key]) {
+         
+          var direction = this._keys[e.key];
+
+          this.trigger('Slide',direction);
+          Crafty.trigger('Turn');
+        }
+      })
+    }
+    
+  });
+
+
+  // Our slide component - listens for slide events
+  // and smoothly slides to another tile location
+  Crafty.c("Slide", {
+    init: function() {
+      this._stepFrames = 5;
+      this._tileSize = 32;
+      this._moving = false;
+      this._vx = 0; this._destX = 0; this._sourceX = 0;
+      this._vy = 0; this._destY = 0; this._sourceY = 0;
+      this._frames = 0;
+
+      this.bind("Slide", function(direction) {
+        // Don't continue to slide if we're already moving
+        if(this._moving) return false;
+        this._moving = true;
+
+        // Let's keep our pre-movement location
+        // Hey, Maybe we'll need it later :)
+        this._sourceX = this.x;
+        this._sourceY = this.y;
+
+        // Figure out our destination
+        this._destX = this.x + direction[0] * 32;
+        this._destY = this.y + direction[1] * 32;
+
+        // Get our x and y velocity
+        this._vx = direction[0] * this._tileSize / this._stepFrames;
+        this._vy = direction[1] * this._tileSize / this._stepFrames;
+
+        this._frames = this._stepFrames;
+      }).bind("EnterFrame",function(e) {
+        if(!this._moving) return false;
+
+        // If we'removing, update our position by our per-frame velocity
+        this.x += this._vx;
+        this.y += this._vy;
+        this._frames--;
+
+        if(this._frames == 0) {
+          // If we've run out of frames,
+          // move us to our destination to avoid rounding errors.
+          this._moving = false;
+          this.x = this._destX;
+          this.y = this._destY;
+        }
+        this.trigger('Moved', {x: this.x, y: this.y});
+      });
+
+    }, 
+    slideFrames: function(frames) { 
+       this._stepFrames = frames;
+    },
+
+    // A function we'll use later to 
+    // cancel our movement and send us back to where we started
+    cancelSlide: function() {
+      this.x = this._sourceX;
+      this.y = this._sourceY;
+      this._moving = false;
+    }
+  });
+
+
+  Crafty.sprite(32,"images/dungeon.png", {
+     floor: [0,0],
+     wall1: [2,1],
+     stairs: [1,3]
+  });
+
+  Crafty.sprite(32,"images/characters.png", {
+     hero1: [5,3],
+     blob1: [4,7]
+  });
+
+  //the loading screen that will display while our assets load
+  Crafty.scene("loading", function() {
+    Crafty.load(["images/dungeon.png","images/characters.png"], function() {
+         Crafty.scene("main"); //when everything is loaded, run the main scene
+    });
+  });
+ 
+  Crafty.scene("main",function() {
+    Crafty.background("#FFF");
+    var player = Crafty.e("2D, Canvas, PlayerControls, Slide, hero1")
+         .attr({x:0, y:0});
+
+    var blob = Crafty.e("2D, Canvas, blob1")
+         .attr({x:50, y:50});
+  });
+
+  Crafty.scene("loading");
+</textarea></div><div class="coder-destination" id="destination-35"></div></div>
+</article>
+
+<article id="slide-36" data-slide-id="36" class="slide slide-list deck-after">
+<h2>Cleaning up</h2>
+<p>Let's start to extract each of our components into it's own file along with our game loading code.</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-36"><textarea style="position: static;" data-target="destination-36" id="editor-36" class="coder-editor" data-coder-template="crafty-separate-template">&lt;script src='components/player_controls.js'&gt;&lt;/script&gt;
+&lt;script src='components/slide.js'&gt;&lt;/script&gt;
+&lt;script src='scenes/loading.js'&gt;&lt;/script&gt;
+
+&lt;script&gt;
+// Scenes/loading.js defines the "loading" scene
+// and loads our sprites
+
+// Start Game will be called on document ready
+function startGame() {
+
+  Crafty.scene("main",function() {
+    Crafty.background("#FFF");
+    var player = Crafty.e("2D, Canvas, PlayerControls, Slide, hero1")
+         .attr({x:0, y:0});
+
+    var blob = Crafty.e("2D, Canvas, blob1")
+         .attr({x:32, y:32});
+  });
+
+  Crafty.scene("loading");
+}
+
+&lt;/script&gt;
+</textarea></div><div class="coder-destination" id="destination-36"></div></div>
+</article>
+
+<article id="slide-37" data-slide-id="37" class="slide slide-list deck-after">
+<h2>"AI"</h2>
+<p>Let's have our blob move every turn as well. We'll define a new 
+component called AI which moves randomly every turn. Let's create two 
+blobs: one slow and one fast.
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-37"><textarea style="position: static;" data-target="destination-37" id="editor-37" class="coder-editor" data-coder-template="crafty-separate-template">&lt;script src='components/player_controls.js?'&gt;&lt;/script&gt;
+&lt;script src='components/slide.js'&gt;&lt;/script&gt;
+&lt;script src='scenes/loading.js'&gt;&lt;/script&gt;
+
+&lt;script&gt;
+Crafty.c("AI",{
+  _directions:  [[0,-1], [0,1], [1,0], [-1,0]],
+  init: function() {
+    this._moveChance = 0.5;
+    this.requires('Slide');
+
+    this.bind("Turn",function() {
+      if(Math.random() &lt; this._moveChance) {
+        this.trigger("Slide", this._randomDirection());
+      }
+    });
+  },
+
+  moveChance: function(val) {
+    this._moveChance = val;
+
+  },
+  _randomDirection: function() {
+    return this._directions[Math.floor(Math.random()*4)];
+  }
+
+});
+
+// Start Game will be called on document ready
+function startGame() {
+
+  Crafty.scene("main",function() {
+    Crafty.background("#FFF");
+    var player = Crafty.e("2D, Canvas, PlayerControls, Slide, hero1")
+         .attr({x:0, y:0});
+
+    var slowBlob = Crafty.e("2D, Canvas, blob1, AI").attr({x:32, y:32}).moveChance(0.2);
+    var fastBlob = Crafty.e("2D, Canvas, blob1, AI").attr({x:96, y:32}).moveChance(0.8);
+  });
+
+  Crafty.scene("loading");
+}
+
+&lt;/script&gt;
+</textarea></div><div class="coder-destination" id="destination-37"></div></div>
+</p></article>
+
+<article id="slide-38" data-slide-id="38" class="slide slide-list deck-after">
+<h2>Loading a Map</h2>
+<p>Now, where do we get a dungeon? Instead of worrying about generation 
+algorithms, let's just download a map from an online map creator like: <a target="_blank" href="http://donjon.bin.sh/d20/dungeon/">http://donjon.bin.sh/d20/dungeon/</a>. I've generated a map, downloaded the tab-separated-values and put it in levels/map.tsv. Let's load it via $.get.</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-38"><textarea style="position: static;" data-target="destination-38" id="editor-38" class="coder-editor" data-coder-template="crafty-separate-template">&lt;script src='components/player_controls.js?'&gt;&lt;/script&gt;
+&lt;script src='components/slide.js'&gt;&lt;/script&gt;
+&lt;script src='scenes/loading.js'&gt;&lt;/script&gt;
+
+  &lt;script&gt;
+  function startGame() {
+
+    $.get("levels/map1.tsv",function(data) {
+       alert(data);
+    });
+
+  }
+&lt;/script&gt;
+</textarea></div><div class="coder-destination" id="destination-38"></div></div>
+</article>
+
+
+<article id="slide-39" data-slide-id="39" class="slide slide-list deck-after">
+<h2>Rendering a Map</h2>
+<p>Let's turn our map into a dungeon tiles. We're using $.each to iterate - please don't do this in a 
+real game, I just think it's easier to see what's going on than with for loops.</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-39"><textarea style="position: static;" data-target="destination-39" id="editor-39" class="coder-editor" data-coder-template="crafty-separate-template">&lt;script src='components/player_controls.js'&gt;&lt;/script&gt;
+&lt;script src='components/slide.js'&gt;&lt;/script&gt;
+&lt;script src='scenes/loading.js'&gt;&lt;/script&gt;
+
+  &lt;script&gt;
+
+function loadMap(file, callback) {
+  $.get(file,function(data) {
+    var level = [];
+    // Split out each row
+    $.each(data.split("\n"),function(y,row) { 
+      var columns = row.split("\t");
+      level.push(columns);
+      // Then split out each column
+      $.each(columns,function(x,column) {
+        if(column) {
+          Crafty.e("2D, Canvas, floor, Floor").attr({x:x * 32, y: y * 32});            
+        } else {
+          Crafty.e("2D, Canvas, wall1, Wall").attr({x:x * 32, y: y * 32});            
+        }
+      });
+
+    });
+
+    // Phone back home when we're done
+    callback(level);
+  });
+}
+
+ 
+  function startGame() {
+
+    Crafty.scene("main",function() {
+      Crafty.background("#FFF");
+      loadMap("levels/map1.tsv",function(levelData) {
+        var player = Crafty.e("2D, Canvas, PlayerControls, Slide, hero1")
+        .attr({x:0, y:11 * 32, z: 1});
+      });
+    });
+
+    Crafty.scene("loading");
+
+  }
+
+
+&lt;/script&gt;
+</textarea></div><div class="coder-destination" id="destination-39"></div></div>
+</article>
+
+<article id="slide-40" data-slide-id="40" class="slide slide-list deck-after">
+<h2>Following the player</h2>
+<p>Crafty has support for a 2D Camera accessible via the "viewport", let's add in a camera component
+that tracks player movement (loadMap has been moved to loading.js)</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-40"><textarea style="position: static;" data-target="destination-40" id="editor-40" class="coder-editor" data-coder-template="crafty-separate-template">&lt;script src='components/player_controls.js'&gt;&lt;/script&gt;
+&lt;script src='components/slide.js'&gt;&lt;/script&gt;
+&lt;script src='scenes/loading.js'&gt;&lt;/script&gt;
+
+  &lt;script&gt;
+
+  Crafty.c("Camera",{
+    init: function() {  },
+    camera: function(obj) {
+      this.set(obj);
+      var that = this;
+      obj.bind("Moved",function(location) { that.set(location); });
+    },
+    set: function(obj) {
+      Crafty.viewport.x = -obj.x + Crafty.viewport.width / 2;
+      Crafty.viewport.y = -obj.y + Crafty.viewport.height / 2;
+    }
+  });
+
+
+  function startGame() {
+
+    Crafty.scene("main",function() {
+      Crafty.background("#000");
+      loadMap("levels/map1.tsv",function() {
+          var player = Crafty.e("2D, Canvas, PlayerControls, Slide, hero1")
+                              .attr({x:0, y:11 * 32, z: 1});
+
+          var camera = Crafty.e("Camera").camera(player);
+        });
+    });
+
+    Crafty.scene("loading");
+
+  }
+
+
+&lt;/script&gt;
+</textarea></div><div class="coder-destination" id="destination-40"></div></div>
+</article>
+
+<article id="slide-41" data-slide-id="41" class="slide slide-list deck-after">
+<h2>Wall Collisions</h2>
+<p>Let's make it so that the player can't walk through walls amymore...</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-41"><textarea style="position: static;" data-target="destination-41" id="editor-41" class="coder-editor" data-coder-template="crafty-separate-template">&lt;script src='components/player_controls.js?'&gt;&lt;/script&gt;
+&lt;script src='components/slide.js'&gt;&lt;/script&gt;
+&lt;script src='components/camera.js'&gt;&lt;/script&gt;
+&lt;script src='scenes/loading.js'&gt;&lt;/script&gt;
+
+  &lt;script&gt;
+  function startGame() {
+
+    Crafty.scene("main",function() {
+      Crafty.background("#000");
+      loadMap("levels/map1.tsv", function() {
+      // 
+        var player = Crafty.e("2D, Canvas, PlayerControls, Slide, hero1")
+                              .attr({x:0, y:11 * 32, z: 1});
+        player.addComponent("Collision").onHit("Wall",function(obj) {
+          this.cancelSlide();
+        });
+
+        var camera = Crafty.e("Camera").camera(player);
+      });
+    });
+
+    Crafty.scene("loading");
+
+  }
+&lt;/script&gt;
+</textarea></div><div class="coder-destination" id="destination-41"></div></div>
+</article>
+
+
+<article id="slide-42" data-slide-id="42" class="slide slide-list deck-after">
+<h2>Enemies</h2>
+<p>We need enemies! Let's add some random enemies onto the page. We'll 
+also extract out a "Solid" component so we don't need to duplicate on 
+hit methods</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-42"><textarea style="position: static;" data-target="destination-42" id="editor-42" class="coder-editor" data-coder-template="crafty-separate-template">&lt;script src='components/player_controls.js?'&gt;&lt;/script&gt;
+&lt;script src='components/slide.js'&gt;&lt;/script&gt;
+&lt;script src='components/ai.js'&gt;&lt;/script&gt;
+&lt;script src='components/camera.js'&gt;&lt;/script&gt;
+&lt;script src='scenes/loading.js'&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  Crafty.c("Solid",{
+    init: function() {
+      this.requires("Collision").onHit("Wall",function(obj) {
+        this.cancelSlide();
+      });
+    }
+  });
+
+  function populateLevel(chance,level) {
+    $.each(level,function(y,row) {
+      $.each(row,function(x,entry) {
+        if(entry != "") {
+          if((Math.random() &lt; chance)) {
+            Crafty.e("2D, Canvas, blob1, AI, Solid").attr({x:x*32, y:y*32, z:1}).moveChance(Math.random()*0.5);
+          }
+        }
+      });
+    });
+  }
+
+  function startGame() {
+
+    Crafty.scene("main",function() {
+      Crafty.background("#000");
+      loadMap("levels/map1.tsv", function(level) {
+        // 
+        var player = Crafty.e("2D, Canvas, PlayerControls, Slide, hero1, Solid")
+                        .attr({x:0, y:11 * 32, z: 1})
+
+        var camera = Crafty.e("Camera").camera(player);
+        populateLevel(0.05, level);
+      });
+    });
+
+    Crafty.scene("loading");
+
+  }
+&lt;/script&gt;
+</textarea></div><div class="coder-destination" id="destination-42"></div></div>
+</article>
+
+
+<article id="slide-43" data-slide-id="43" class="slide slide-list deck-after">
+<h2>Fight!</h2>
+<p>Let's assume our hero is awesome, and just automatically kill the 
+enemies on contact. Populate level has been moved to loading.js</p>
+<div class="coder-wrapper coder-wrapper-split"><div class="coder-editor-wrapper" id="wrapper-43"><textarea style="position: static;" data-target="destination-43" id="editor-43" class="coder-editor" data-coder-template="crafty-separate-template">&lt;script src='components/player_controls.js?'&gt;&lt;/script&gt;
+&lt;script src='components/slide.js'&gt;&lt;/script&gt;
+&lt;script src='components/ai.js'&gt;&lt;/script&gt;
+&lt;script src='components/camera.js'&gt;&lt;/script&gt;
+&lt;script src='components/solid.js'&gt;&lt;/script&gt;
+&lt;script src='scenes/loading.js?'&gt;&lt;/script&gt;
+
+&lt;script&gt;
+  function startGame() {
+
+    Crafty.scene("main",function() {
+      Crafty.background("#000");
+      loadMap("levels/map1.tsv", function(level) {
+        // 
+        var player = Crafty.e("2D, Canvas, PlayerControls, Slide, hero1, Solid")
+             .attr({x:0, y:11 * 32, z: 1})
+             .onHit("Enemy",function(hit) {
+               this.cancelSlide();
+               hit[0].obj.destroy();
+             });
+
+        var camera = Crafty.e("Camera").camera(player);
+
+        populateLevel(0.05, level);
+      });
+    });
+
+    Crafty.scene("loading");
+
+  }
+&lt;/script&gt;
+</textarea></div><div class="coder-destination" id="destination-43"></div></div>
+</article>
+
+
+
+
+<article id="slide-44" data-slide-id="44" class="slide slide-list deck-after">
+<h2>To Do:</h2>
+<ul>
+	<li>
+          <h3>Add health to player and enemies</h3>
+	</li>
+        <li>
+          <h3>Add Sound Effects</h3>
+        </li>
+	<li>
+          <h3>Add Hud</h3>
+	</li>
+	<li>
+          <h3>Add Level up support</h3>
+	</li>
+        <li>
+          <h3>Add Chests and items</h3>
+        </li>
+	<li>
+          <h3>Add an inventory</h3>
+	</li>
+
+	<li>
+          <h3>Add multiple scenes / levels</h3>
+	</li>
+</ul>
+</article>
+
+
+
+
+<script src="Crafty.js%20workshop_files/coderdeck.js"></script>
+
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+
+
+</body></html>

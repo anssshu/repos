@@ -1,0 +1,76 @@
+--------
+TOKENS  
+--------
+
+//data types
+
+//variables and constants
+
+//operators
+
+//keywords
+
+//escape sequence
+
+//expressions
+
+//statements
+
+1.simple 2.compound
+
+---------------
+FLOW OF CONTROL
+---------------
+
+//conditionals
+1.if 2.if else 3.if elseif else
+4.switch case 
+
+//loops
+1.while 2.for 3.do while 
+
+//go to statement
+
+------------
+FUNCTIONS
+------------
+
+normal functions without arguements
+functions with arguement
+
+function with out return
+functions with return values
+
+functions with initial assignment
+
+functions with infinite arguements
+
+recursion
+
+pointer functions
+
+----------------------------------
+ARRAY POINTER and DATA STRUCTURES
+---------------------------------
+
+------------------
+CLASS and OBJECTS
+-----------------
+
+-------------
+I/O and FILES
+-------------
+
+--------------
+ERROR HANDLING
+--------------
+
+------------------
+STANDARD LIBRARARY
+------------------
+
+
+
+
+
+

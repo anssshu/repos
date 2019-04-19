@@ -1,0 +1,19 @@
+drawing primitives
+
+first create a draw node
+
+then add it to the current layer 
+
+then draw on the node
+
+with the defined functions
+
+var draw=cc.DrawNode.create();
+this.addChild(draw);
+
+draw.drawDots(array of points)
+draw.drawRect(origin,dest,fillcolor,linewidth,linecolor);
+
+
+
+

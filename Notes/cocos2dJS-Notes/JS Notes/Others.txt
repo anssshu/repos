@@ -1,0 +1,136 @@
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+                                                      6.Exception Handling
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+try {
+    Block of code to try
+}
+catch(err) {
+    Block of code to handle errors
+}
+finally {
+    Block of code to be executed regardless of the try / catch result
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+                                                      7.Files
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+as the javascript works inside the browser files cann't be handles with it.with the File HTML element 
+files can be uploaded.
+
+local files can be used with the node.js package
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+						      8.Standard Library
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+Standrad library in js contains 
+global objetcs 
+
+window
+document
+Array
+Object
+Function
+Date
+String
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+                                                      9.Modules and Packages
+---------------------------------------------------------------------------------------------------------------------------------------------------
+all class function and variable declaration to be written in a file with " .js " extension and loaded in the html file
+for access 
+<html>
+	<head>
+		<script src="/<dirname>/<filename>.js"></script>
+	</head>
+<body>
+<script>
+// all global functions and variable inside <filename>.js can be used here
+</script>
+</body>
+</html>
+---------------------------------------------------------------------------------------------------------------------------------------------------
+                                                      10.Special Features
+---------------------------------------------------------------------------------------------------------------------------------------------------
+String methods
+
+var str = "Please locate where 'locate' occurs!";
+var pos = str.indexOf("locate");
+
+x = true;
+Number(x);        // returns 1
+x = false;     
+Number(x);        // returns 0
+x = new Date();
+Number(x);        // returns 1404568027739
+x = "10"
+Number(x);        // returns 10
+x = "10 20"
+Number(x);        // returns NaN
+
+Numbers
+var x = 123;
+x.toString();            // returns 123 from variable x
+(123).toString();        // returns 123 from literal 123
+(100 + 23).toString();   // returns 123 from expression 100 + 23
+
+var x = 9.656;
+x.toExponential(2);     // returns 9.66e+0
+x.toExponential(4);     // returns 9.6560e+0
+x.toExponential(6);     // returns 9.656000e+0
+
+var x = 9.656;
+x.toFixed(0);           // returns 10
+x.toFixed(2);           // returns 9.66
+x.toFixed(4);           // returns 9.6560
+x.toFixed(6);           // returns 9.656000
+
+var x = 9.656;
+x.toPrecision();        // returns 9.656
+x.toPrecision(2);       // returns 9.7
+x.toPrecision(4);       // returns 9.656
+x.toPrecision(6);       // returns 9.65600
+
+x = true;
+Number(x);        // returns 1
+x = false;     
+Number(x);        // returns 0
+x = new Date();
+Number(x);        // returns 1404568027739
+x = "10"
+Number(x);        // returns 10
+x = "10 20"
+Number(x);        // returns NaN
+
+
+Date
+########################
+Date Get Methods
+
+Get methods are used for getting a part of a date. Here are the most common (alphabetically):
+Method	Description
+getDate()	Get the day as a number (1-31)
+getDay()	Get the weekday as a number (0-6)
+getFullYear()	Get the four digit year (yyyy)
+getHours()	Get the hour (0-23)
+getMilliseconds()	Get the milliseconds (0-999)
+getMinutes()	Get the minutes (0-59)
+getMonth()	Get the month (0-11)
+getSeconds()	Get the seconds (0-59)
+getTime()	Get the time (milliseconds since January 1, 1970)
+
+USE IN THE HTML DOCUMENT
+
+
+window.alert();//write into the alert box
+document.write();//write into the HTML
+innerHTML.// write into the documents html part
+console.log()//write into the console
+
+
+
+
+
+

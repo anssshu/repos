@@ -1,0 +1,91 @@
+Inheritance
+---------------------
+//create a vehicle and initialize
+class Vehicle {
+ protected :
+
+string license ;
+int year ;
+
+
+ public :
+
+
+Vehicle ( const string & myLicense , const int myYear )
+
+
+: license ( myLicense ) , year ( myYear ) {}
+
+const string getDesc () const
+
+{ return license + " from " + stringify ( year ) ;}
+
+const string & getLicense () const { return license ;}
+const int getYear () const { return year ;}
+
+ };
+ ----------------------------------------------------
+ class Car : public Vehicle {
+// Makes Car inherit from Vehicle
+string style ;
+public :
+//constructot with initilization
+Car ( const string & myLicense , const int myYear , const string
+& myStyle )
+: Vehicle ( myLicense , myYear ) , style ( myStyle ) {}
+
+const string & getStyle () { return style ;}
+ };
+ ------------------------------------------------------------------
+ virtual Functions
+There is still a problem. Take the following example:
+1 Car c ( " VANITY " , 2003) ;
+2 Vehicle * vPtr = & c ;
+3 cout << vPtr - > getDesc () ;
+
+(The -> notation on line 3 just dereferences and gets a member. ptr->member is equivalent
+to (*ptr).member.)
+Because vPtr is declared as a Vehicle *, this will call the Vehicle version of getDesc, even
+though the object pointed to is actually a Car. Usually we’d want the program to select the
+correct function at runtime based on which kind of object is pointed to. We can get this
+behavior by adding the keyword virtual before the method definition:
+
+  class Vehicle {
+
+...
+
+virtual const string getDesc () {...}
+
+ };
+-------------------------------------------------------------------------
+Pure virtual Functions
+Arguably, there is no reasonable way to define getDesc for a generic Vehicle – only derived
+classes really need a definition of it, since there is no such thing as a generic vehicle that
+isn’t also a car, truck, or the like. Still, we do want to require every derived class of Vehicle
+to have this function.
+6We can omit the definition of getDesc from Vehicle by making the function pure virtual
+via the following odd syntax:
+1 class Vehicle {
+
+2
+...
+
+virtual const string getDesc () = 0; // Pure virtual
+
+3
+4 };
+
+The = 0 indicates that no definition will be given. This implies that one can no longer create
+an instance of Vehicle; one can only create instances of Cars, Trucks, and other derived
+classes which do implement the getDesc method. Vehicle is then an abstract class – one
+which defines only an interface, but doesn’t actually implement it, and therefore cannot be
+instantiated.
+=================================================================================
+Multiple Inheritance
+
+//Unlike many object-oriented languages, C++ allows a class to have multiple base classes:
+
+class Car : public Vehicle , public InsuredItem {
+
+//...
+ };

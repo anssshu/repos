@@ -1,0 +1,168 @@
+INTRODUCTION
+raw information is data
+
+
+processed data is information
+
+
+computer is a data processing machine
+
+so we are interested in information
+s 
+we give inputs to the computer
+ to get our outputs,it can also store the data and information
+these outputs are in the form of pictures text sound and any form you want
+
+we give this in put in the form of a set instruction in a specific language to the computer to process and give us information
+
+ so these set of instruction is called as a program
+ 
+
+
+PYTHON is a high level ,productive and user friendly programming language
+
+
+we represent  instructions by using certain symbols which finally the computer understands
+
+how to write these symbol is learn
+ing computer	
+ language
+
+************************************************************************************************************
+         THE BUILDING BLOCKS
+basic building block of  python programs are
+1.variables,2.numbers,3.sequences,4.keywords,5.flags,
+6.operators,7.functions8.classes9.methods,10.objects,
+
+*all the data we use to write a program can be classified into only one type that is object that is every thing is an object
+
+* these objects are futher classified into 
+1.intiger,2.complex,3.floats,4.string,5.list,6.dictionary,7.sets,8.tuples,9.user defined (object)
+
+* now all the components written above are used to write expressions 
+
+*using expressions we write statements  and each
+staemnent is a complete instruction  
+
+* thats why a program is a set of statements
+
+*there are three types of statements 
+ 1.simple statement
+ 2.control statement
+ 3.nested 
+
+
+* we group statements to form user defined functions so that we can use a group of statements repeatedly  this kind of programming is called as 
+procedural programming
+
+* further we group ststements and functions to form
+user define d data types called as classes
+*when a class is called the output is an object
+*we creat objects and solve our programming problems .this kind of programming is called as object-oriented programming
+
+*the purpose of object oriented programming is to make programs well organised ,facilitate re use of data and make programs compact
+
+*further these programs can be stored as python files 
+called modules and many modules can be stored in a directory called as package.  
+
+*the data inside the modules of a package can be accessed from other programs for solving programming problems .this approach of solving programming problems is called as modular programming.
+************************************************************************************************************ 
+
++++++FOR QUICK REVISION ONLY+++++++++++
+1.numbers
+  a)1000,100000000L inregers
+  b)2.3,.001      floats
+  c)2+7j  complex
+2.varibles(every thing is a variable)
+  a=5, 9ab=76#wrong,_asd=6#wrong
+3.sequences
+a)string exmp-'ansuman mund','''sasas''',"sdffggh"
+b)list  [1,3,5,'ans',(1,2,3)],[1,2],
+c)dictionary {key1:value1,......} ,{1:'ans','jhjshd':55}
+d)sets{1,2,5,6,7,'q','assd'}
+e)tuples (4,5,[1,2,'h'],'asa')
+4.operators
++,=,<,>,!=,<=,*,%,and,is,or,nor ,==,in,is
+the format operator %0.2g,%d,%s
+d for integer,g for float,s for string
+example-'my name is %s',%('anshuman)
+
+5.keywords 
+for ,as ,in ,or ect words that can not be used as identifier
+6.escape sequence \n
+example  'sdasdasd \n dasdas', 'ansdn \' dfsd'
+7.flag   ,example  flag  PI=math.pi
+8.expression  2+2,a=5,
+9.statement print('hello world')
+10.control statements
+a)if statement
+     if  condition :
+                statement block
+     elif  condition :
+                statement block
+     else:
+                statement block
+b)for statement  
+for var in sequence:
+        statement block
+c)while loop
+ while condition:
+         statement block
+          break    #optional
+
+11.function
+ example    def  name(arg1,arg2,....):
+ 		statement block
+                            return value
+                                  or
+                               return
+
+
+note instead of arg use *arg for any no of input as tuples and **arg for dictionary
+12.class callsname(type1,type2,....):
+             class variables declaration #optional
+              statement block
+             methods
+
+  example  class house(object):
+              def __init__(self,name)
+                    self.name=name
+             def speak(self)
+                   print(self.name)
+ 
+*example of inheritance  
+     class cottage(house):
+            def __init__(self,color='brown')
+                 self.color=color
+                 house.__init__()
+
+
+
+13.methods
+def methodname(self,arg1,....)
+      statement block
+def  __init__(self,arg1,.......)
+           statementblock
+
+14.file operation 
+var=f.open(filename,mode)#filename=string 
+mode is 'r','w','a'
+'w' clears the file and write new things
+var.write(string)
+var.close()
+*other imp concepts pickle,pipe,database,with statement
+16.error handling
+try:
+	statement block
+
+except:
+             error statement block
+17.sequence  handlig
+a)traversing,b)slicing,c)comparing,d)search,e)adding
+f)deleting ,g)reversing,h)interconversion
+
+important methods add,pop,sort,zip,strip,
+18.some important concepts
+polymerphism,inheritance,hashing,momo,alising,
+antilising,class diagram,object diagram,operation override,itteration,
+************************************************************************************************************

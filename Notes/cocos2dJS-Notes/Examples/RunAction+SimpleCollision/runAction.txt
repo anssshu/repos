@@ -1,0 +1,15 @@
+this to learn the a
+Actions in cocos 2d
+
+1.MoveBy
+
+//create an action
+var t=2;/no of seconds
+var p=cc.p(100,200);
+action=cc.MoveBy.create(t,p);
+
+///type of actions
+//collision detection
+cc.rectIntersectsRect(this.sp.getBoundingBox(),
+                                sp2.getBoundingBox());
+

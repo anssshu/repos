@@ -1,0 +1,25 @@
+ is simple the notes to create scene transitions
+
+Bassics
+
+first create a scene 
+create another scene 
+
+
+create a menu item in one scene 
+
+
+link another scene through a call back 
+or the menu item callback
+
+create a transition element 
+
+cc.Tr-------(t,s);
+
+t is time 
+s is scene
+
+cc.direcor.runScene(transition element);
+
+
+

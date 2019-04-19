@@ -1,0 +1,52 @@
+When you declare a variable, the computer associates the variable name with a particular
+location in memory and stores a value there.
+When you refer to the variable by name in your code, the computer must take two steps:
+
+1.	 Look up the address that the variable name corresponds to
+
+2.	 Go to that location in memory and retrieve or set the value it contains
+
+C++ allows us to perform either one of these steps independently on a variable with the &
+and * operators:
+
+1.	 &x evaluates to the address of x in memory.
+
+2. *( &x ) takes the address of x and dereferences it – it retrieves the value at that
+location in memory. *( &x ) thus evaluates to the same thing as x.
+-----------------------------------------------------------------------------
+Pointers are just variables storing integers
+
+int * ptr = & x ;
+---------------------------
+void squareByPtr ( int * numPtr ) {
+* numPtr = * numPtr * * numPtr ;
+}
+
+
+int main () {
+int x = 5;
+squareByPtr (& x ) ;
+cout << x ; // Prints 25
+}
+
+----------------------------------------
+const int * ptr ;//declares a changeable pointer to a constant integer.
+
+int * const ptr ;//declares a constant pointer to changeable integer data
+
+const int * const ptr ; //forbids changing either the address ptr contains
+or the value it points to.
+-----------------------------------------------
+
+References
+When we write void f(int &x) {...} and call f(y), the reference variable x becomes
+another name – an alias – for the value of y in memory. We can declare a reference variable
+locally, as well:
+int y ;
+
+int & x = y ; // Makes x a reference to , or alias of , y
+------------------------------------------------------------
+//does the same thing
+char courseName1 [] = { ’6 ’ , ’. ’ , ’0 ’ , ’9 ’ , ’6 ’ , ’ \0 ’ };
+
+char * courseName2 = " 6.096 " ;

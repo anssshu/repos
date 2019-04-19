@@ -1,0 +1,25 @@
+this is menu item notes
+
+first create a layer 
+
+create 2 sprites inside the layer
+and do not attach it .
+
+
+
+sp2/pressed state
+sp1 unpressed state
+
+
+mthene create a menu item 
+its inputs are sp1,sp2,callback,this
+
+then create a menu
+
+set the position of the menu add it to the layer
+
+define the callback of menu item
+
+////////////////////////////////////////
+
+
